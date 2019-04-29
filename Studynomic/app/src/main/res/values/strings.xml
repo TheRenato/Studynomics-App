@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Studynomic</string>
+    <string name="timeToWrkInPr">Your Income: \n</string>
+    <string name="payOutAftrTax">Your income after Tax: \n</string>
+    <string name="yourIncomeWCSN">Your income whit CSN: \n</string>
+    <string name="userInputPayForWork">Your Pay full time</string>
+    <string name="userInputWorkTime">Your working hour/4w.</string>
+    <string name="incomeText">Please, fill in as if you had worked full time.</string>
+</resources>
