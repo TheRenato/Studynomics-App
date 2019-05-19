@@ -1,4 +1,4 @@
-package com.opazowebb.studynomic
+package com.opazoweb.studynomic
 
 import org.junit.Test
 

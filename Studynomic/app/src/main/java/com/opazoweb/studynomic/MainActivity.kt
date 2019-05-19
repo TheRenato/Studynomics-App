@@ -1,4 +1,4 @@
-package com.opazowebb.studynomic
+package com.opazoweb.studynomic
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
