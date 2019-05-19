@@ -1,6 +1,6 @@
 package com.opazoweb.studynomic.ui
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.opazoweb.studynomic.R
 
