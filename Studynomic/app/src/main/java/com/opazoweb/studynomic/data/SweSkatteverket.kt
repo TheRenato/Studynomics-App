@@ -1,4 +1,4 @@
-package com.opazoweb.studynomic
+package com.opazoweb.studynomic.data
 
 import java.net.URL
 
@@ -29,7 +29,7 @@ class SweSkatteverket(private var apiURL: String = "") {
 
     }
 
-    fun getTaxTabells (choosenCity: String) {
+//    fun getTaxTabells (choosenCity: String) {
 
-    }
+  //  }
 }
