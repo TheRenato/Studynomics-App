@@ -1,4 +1,4 @@
-package com.opazoweb.studynomic.data
+package com.opazoweb.studynomic.data.Skatteverket.municipality
 
 
 data class MunicipalitySkatteverketResponse(
