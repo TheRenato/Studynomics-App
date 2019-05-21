@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-            android:id="@+id/summery"
+            android:id="@+id/summeryFragment"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Summery"
+    />
+    <item
+            android:id="@+id/summeryCSNFragment"
+            android:icon="@drawable/ic_school_black_24dp"
+            android:title="CSN Summery"
+    />
+    <item
+            android:id="@+id/summeryWorkFragment"
+            android:icon="@drawable/ic_work_black_24dp"
+            android:title="Work Summery"
     />
     <item
             android:id="@+id/settingsFragment"
