@@ -1,4 +1,6 @@
-package com.opazoweb.studynomic.data.Skatteverket.municipality
+package com.opazoweb.studynomic.data.network.response
+
+import com.opazoweb.studynomic.data.db.entity.Result
 
 
 data class MunicipalitySkatteverketResponse(

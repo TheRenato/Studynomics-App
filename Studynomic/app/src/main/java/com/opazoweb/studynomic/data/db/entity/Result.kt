@@ -1,4 +1,4 @@
-package com.opazoweb.studynomic.data.Skatteverket.municipality
+package com.opazoweb.studynomic.data.db.entity
 
 
 import com.google.gson.annotations.SerializedName

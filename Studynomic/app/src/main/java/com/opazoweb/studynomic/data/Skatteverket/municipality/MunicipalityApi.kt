@@ -2,12 +2,12 @@ package com.opazoweb.studynomic.data.Skatteverket.municipality
 
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.opazoweb.studynomic.data.network.response.MunicipalitySkatteverketResponse
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import retrofit2.http.GET
 import retrofit2.http.Query
 import java.text.SimpleDateFormat
