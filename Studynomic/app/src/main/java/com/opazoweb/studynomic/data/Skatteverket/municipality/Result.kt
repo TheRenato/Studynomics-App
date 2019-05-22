@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Result(
     @SerializedName("begravnings-avgift")
-    val begravningsAvgift: String,
+    val begravningsAvgift: Double,
 
     val församling: String,
 
@@ -15,17 +15,18 @@ data class Result(
     val kommun: String,
 
     @SerializedName("kommunal-skatt")
-    val kommunalSkatt: String,
+    val kommunalSkatt: Double,
 
-    val kyrkoavgift: String,
+    val kyrkoavgift: Double,
+
     @SerializedName("landstings-skatt")
+    val landstingsSkatt: Double,
 
-    val landstingsSkatt: String,
     @SerializedName("summa, exkl. kyrkoavgift")
+    val summaExklKyrkoavgift: Double,
 
-    val summaExklKyrkoavgift: String,
     @SerializedName("summa, inkl. kyrkoavgift")
+    val summaInklKyrkoavgift: Double,
 
-    val summaInklKyrkoavgift: String,
-    val år: String
+    val år: Int
 )

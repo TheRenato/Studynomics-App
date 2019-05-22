@@ -37,8 +37,8 @@ class SummeryWorkFragment : Fragment() {
         val municipalityApi = MunicipalityApi()
 
         GlobalScope.launch(Dispatchers.Main) {
-            val municipalitySkatteverketResponse = municipalityApi.getCurrentTax(city = "KÖPING").await()
-            summeryWorkFragmentText.text = municipalitySkatteverketResponse.toString()
+            val municipalitySkatteverketResponse = municipalityApi.getCurrentTax(city = "^KÖP").await()
+            summeryWorkFragmentText.text = municipalitySkatteverketResponse.results.toString()
 
         }
     }
