@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.opazoweb.studynomic.R
-import com.opazoweb.studynomic.data.Skatteverket.municipality.MunicipalityApi
+import com.opazoweb.studynomic.data.network.MunicipalityApi
 import kotlinx.android.synthetic.main.summery_work_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

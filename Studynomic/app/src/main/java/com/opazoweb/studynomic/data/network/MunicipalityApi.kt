@@ -1,4 +1,4 @@
-package com.opazoweb.studynomic.data.Skatteverket.municipality
+package com.opazoweb.studynomic.data.network
 
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -22,7 +22,9 @@ interface MunicipalityApi {
     ):Deferred<MunicipalitySkatteverketResponse>
 
     companion object{
-        operator fun invoke(): MunicipalityApi {
+        operator fun invoke(
+            connectivityInterceptor: ConnectivityInterceptor
+        ): MunicipalityApi {
             val requestInterceptor = Interceptor{chain ->
 
                 val request = chain.request()
@@ -34,6 +36,7 @@ interface MunicipalityApi {
 
             val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(requestInterceptor)
+                .addInterceptor(connectivityInterceptor)
                 .build()
 
             return Retrofit.Builder()
