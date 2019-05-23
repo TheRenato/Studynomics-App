@@ -1,6 +1,6 @@
 package com.opazoweb.studynomic.data.network.response
 
-import com.opazoweb.studynomic.data.db.entity.Result
+import com.opazoweb.studynomic.data.db.entity.MunicipalityResult
 
 
 data class MunicipalitySkatteverketResponse(
@@ -8,5 +8,5 @@ data class MunicipalitySkatteverketResponse(
     val next: String,
     val offset: Int,
     val resultCount: Int,
-    val results: List<Result>
+    val results: List<MunicipalityResult>
 )

@@ -1,26 +1,29 @@
 package com.opazoweb.studynomic.data.db.entity
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class Result(
+const val CURRENT_MUNICPALITY_ID = 0
+
+@Entity(tableName = "municipality_tax")
+data class MunicipalityResult(
+
     @SerializedName("begravnings-avgift")
     val begravningsAvgift: Double,
 
-    val församling: String,
+    @SerializedName("församling")
+    val forsamling: String,
 
+//    Kanske använda detta som ID senare
     @SerializedName("församlings-kod")
-    val församlingsKod: String,
+    val forsamlingsKod: String,
 
     val kommun: String,
 
     @SerializedName("kommunal-skatt")
     val kommunalSkatt: Double,
-
-    val kyrkoavgift: Double,
-
-    @SerializedName("landstings-skatt")
-    val landstingsSkatt: Double,
 
     @SerializedName("summa, exkl. kyrkoavgift")
     val summaExklKyrkoavgift: Double,
@@ -28,5 +31,9 @@ data class Result(
     @SerializedName("summa, inkl. kyrkoavgift")
     val summaInklKyrkoavgift: Double,
 
-    val år: Int
-)
+    @SerializedName("år")
+    val ar: Int
+) {
+    @PrimaryKey(autoGenerate = false)
+    var id: Int = CURRENT_MUNICPALITY_ID
+}
