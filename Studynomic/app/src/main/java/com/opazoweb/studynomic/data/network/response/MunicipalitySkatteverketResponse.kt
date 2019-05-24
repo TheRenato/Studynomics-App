@@ -8,5 +8,5 @@ data class MunicipalitySkatteverketResponse(
     val next: String,
     val offset: Int,
     val resultCount: Int,
-    val results: List<MunicipalityResult>
+    val results: MunicipalityResult
 )
