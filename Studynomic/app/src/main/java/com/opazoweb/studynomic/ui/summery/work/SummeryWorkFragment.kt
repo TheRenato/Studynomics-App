@@ -47,12 +47,15 @@ class SummeryWorkFragment : ScopedFragment(), KodeinAware {
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(SummeryWorkViewModel::class.java)
 
+        bindUI()
 
     }
 
     private fun bindUI() = launch {
         val currentTax = viewModel.tax.await()
         currentTax.observe(this@SummeryWorkFragment, Observer {
+            if(it == null) return@Observer
+
             summeryWorkFragmentText.text = it.toString()
         })
     }
