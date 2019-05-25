@@ -1,4 +1,4 @@
-package com.opazoweb.studynomic.data.db.ChurchTaxOrNot
+package com.opazoweb.studynomic.data.db.churchTaxOrNot
 
 interface ChurchTaxOrNotResult {
         val begravningsAvgift: Double

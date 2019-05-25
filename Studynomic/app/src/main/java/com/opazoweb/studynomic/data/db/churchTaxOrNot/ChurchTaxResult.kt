@@ -1,16 +1,16 @@
-package com.opazoweb.studynomic.data.db.ChurchTaxOrNot
+package com.opazoweb.studynomic.data.db.churchTaxOrNot
 
 import androidx.room.ColumnInfo
 
-class NoChurchTaxResult (
+class ChurchTaxResult(
     @ColumnInfo(name = "begravningsAvgift")
     override val begravningsAvgift: Double,
     @ColumnInfo(name = "forsamling")
     override val forsamling: String,
     @ColumnInfo(name = "kommun")
     override val kommun: String,
-    @ColumnInfo(name = "summaExklKyrkoavgift")
+    @ColumnInfo(name = "summaInklKyrkoavgift")
     override val taxSum: Double,
-    @ColumnInfo(name = "year")
+    @ColumnInfo(name = "ar")
     override val year: Int
 ): ChurchTaxOrNotResult

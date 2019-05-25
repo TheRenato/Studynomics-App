@@ -1,5 +1,6 @@
 package com.opazoweb.studynomic.data.network.response
 
+import com.google.gson.annotations.SerializedName
 import com.opazoweb.studynomic.data.db.entity.MunicipalityResult
 
 
@@ -8,5 +9,6 @@ data class MunicipalitySkatteverketResponse(
     val next: String,
     val offset: Int,
     val resultCount: Int,
-    val results: MunicipalityResult
+    @SerializedName("results")
+    val municipalityResult: List<MunicipalityResult>
 )

@@ -2,7 +2,7 @@ package com.opazoweb.studynomic.data.repository
 
 import androidx.lifecycle.LiveData
 import com.opazoweb.studynomic.data.db.MunicipalityTaxDao
-import com.opazoweb.studynomic.data.db.entity.MunicipalityResult
+import com.opazoweb.studynomic.data.db.churchTaxOrNot.ChurchTaxOrNotResult
 import com.opazoweb.studynomic.data.network.SkatteverketNetworkDataSource
 import com.opazoweb.studynomic.data.network.response.MunicipalitySkatteverketResponse
 import kotlinx.coroutines.Dispatchers
@@ -22,16 +22,17 @@ class MunicipalityRepositoryImpl (
         }
     }
 
-    override suspend fun getCurrentTax(): LiveData<out MunicipalityResult> {
+    override suspend fun getCurrentTax(church: Boolean): LiveData<out ChurchTaxOrNotResult> {
         return withContext(Dispatchers.IO) {
             initTaxData()
-            return@withContext municipalityTaxDao.getMunicipalityResult()
+            return@withContext if (church) municipalityTaxDao.getChurchTaxResult()
+            else municipalityTaxDao.getNoChurchTaxResult()
         }
     }
 
     private fun persistFetchedMunicipalityTax(fetchedTax: MunicipalitySkatteverketResponse) {
         GlobalScope.launch(Dispatchers.IO) {
-            municipalityTaxDao.upsert(fetchedTax.results)
+            municipalityTaxDao.upsert(fetchedTax.municipalityResult)
         }
     }
 

@@ -9,7 +9,6 @@ const val CURRENT_MUNICPALITY_ID = 0
 
 @Entity(tableName = "municipality_tax")
 data class MunicipalityResult(
-
     @SerializedName("begravnings-avgift")
     val begravningsAvgift: Double,
 
