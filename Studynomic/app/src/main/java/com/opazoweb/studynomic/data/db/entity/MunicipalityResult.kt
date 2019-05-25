@@ -22,9 +22,6 @@ data class MunicipalityResult(
 
     val kommun: String,
 
-    @SerializedName("kommunal-skatt")
-    val kommunalSkatt: Double,
-
     @SerializedName("summa, exkl. kyrkoavgift")
     val summaExklKyrkoavgift: Double,
 

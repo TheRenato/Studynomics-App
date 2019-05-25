@@ -13,12 +13,20 @@ import com.opazoweb.studynomic.data.network.ConnectivityInterceptorImpl
 import com.opazoweb.studynomic.data.network.MunicipalityApi
 import com.opazoweb.studynomic.data.network.SkatteverketNetworkDataSourceImpl
 import com.opazoweb.studynomic.data.network.response.MunicipalitySkatteverketResponse
+import com.opazoweb.studynomic.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.summery_work_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.instance
 
-class SummeryWorkFragment : Fragment() {
+class SummeryWorkFragment : ScopedFragment(), KodeinAware {
+
+    override val kodein by closestKodein()
+    private val viewModelFactory: SummeryWorkViewModelFactory by instance()
 
     companion object {
         fun newInstance() = SummeryWorkFragment()
@@ -35,21 +43,18 @@ class SummeryWorkFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SummeryWorkViewModel::class.java)
-        // TODO: Use the ViewModel
 
-        val municipalityApi = MunicipalityApi(ConnectivityInterceptorImpl(this.context!!))
-        val skatteverketNetworkDataSource = SkatteverketNetworkDataSourceImpl(municipalityApi)
+        viewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(SummeryWorkViewModel::class.java)
 
-        skatteverketNetworkDataSource.downloadMunicipalityTax.observe(this, Observer {
+
+    }
+
+    private fun bindUI() = launch {
+        val currentTax = viewModel.tax.await()
+        currentTax.observe(this@SummeryWorkFragment, Observer {
             summeryWorkFragmentText.text = it.toString()
         })
-
-        GlobalScope.launch(Dispatchers.Main) {
-           skatteverketNetworkDataSource.fetchMunicipalityTax("KÖPING")
-
-
-        }
     }
 
 }
