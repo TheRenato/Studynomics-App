@@ -10,25 +10,26 @@ const val CURRENT_MUNICPALITY_ID = 0
 @Entity(tableName = "municipality_tax")
 data class MunicipalityResult(
     @SerializedName("begravnings-avgift")
-    val begravningsAvgift: Double,
+    val burialFee: Double,
 
     @SerializedName("församling")
-    val forsamling: String,
+    val township: String,
 
 //    Kanske använda detta som ID senare
     @SerializedName("församlings-kod")
-    val forsamlingsKod: String,
+    val townshipCode: String,
 
-    val kommun: String,
+    @SerializedName("kommun")
+    val municipality: String,
 
     @SerializedName("summa, exkl. kyrkoavgift")
-    val summaExklKyrkoavgift: Double,
+    val sumExclChurchFee: Double,
 
     @SerializedName("summa, inkl. kyrkoavgift")
-    val summaInklKyrkoavgift: Double,
+    val sumInclChurchFee: Double,
 
     @SerializedName("år")
-    val ar: Int
+    val year: Int
 ) {
     @PrimaryKey(autoGenerate = false)
     var id: Int = CURRENT_MUNICPALITY_ID

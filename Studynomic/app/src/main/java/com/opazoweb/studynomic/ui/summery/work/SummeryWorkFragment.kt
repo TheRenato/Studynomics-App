@@ -56,8 +56,10 @@ class SummeryWorkFragment : ScopedFragment(), KodeinAware {
         currentTax.observe(this@SummeryWorkFragment, Observer {
             if(it == null) return@Observer
 
-                        
-            summeryWorkFragmentText.text = it.taxSum.toString()
+
+            summeryWorkFragmentMunicipalityText.text = it.municipality
+            summeryWorkFragmentTownshipText.text = it.township
+            summeryWorkFragmentTaxText.text = it.taxSum.toString()
         })
     }
 

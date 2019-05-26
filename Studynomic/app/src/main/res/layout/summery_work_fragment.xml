@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ui.summery.work.SummeryWorkFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidline"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
     <TextView
-            android:id="@+id/summeryWorkFragmentText"
+            android:id="@+id/summeryWorkFragmentMunicipalityText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Hello"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="32sp"
+            android:layout_marginTop="8dp"
+            android:text="Municipality"/>
 
-</FrameLayout>
+    <TextView
+            android:id="@+id/summeryWorkFragmentTownshipText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/summeryWorkFragmentMunicipalityText"
+            app:layout_constraintLeft_toLeftOf="@+id/summeryWorkFragmentMunicipalityText"
+            app:layout_constraintRight_toRightOf="@+id/summeryWorkFragmentMunicipalityText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="32sp"
+            android:text="Township"/>
+
+    <TextView
+            android:id="@+id/summeryWorkFragmentTaxText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/summeryWorkFragmentTownshipText"
+            app:layout_constraintLeft_toLeftOf="@+id/summeryWorkFragmentTownshipText"
+            app:layout_constraintRight_toRightOf="@+id/summeryWorkFragmentTownshipText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="32sp"
+            android:text="SumTax" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
