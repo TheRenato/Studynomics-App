@@ -7,6 +7,7 @@ interface SkatteverketNetworkDataSource {
     val downloadMunicipalityTax: LiveData<MunicipalitySkatteverketResponse>
 
     suspend fun fetchMunicipalityTax(
-        city: String
+        city: String,
+        township: String
     )
 }

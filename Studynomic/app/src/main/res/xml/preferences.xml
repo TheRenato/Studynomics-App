@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Your Work">
+        <SwitchPreference
+            android:key="WORKING_BEFORE_OR_DURING"
+            android:title="Will you or have you work?"
+            android:summary="If you have an employment before your studies or planing to work when you are studying"
+            android:defaultValue="false"
+            android:disableDependentsState="true"/>
+
+        <ListPreferencePreference
+            android:key="YOUR_RESIDENT"
+            android:title="Municipality?"
+            android:summary="The municipality you will be registered in while you are studying."
+            android:defaultValue="Stockholm"
+            android:entries="@array/swedensMunicipalitys"
+            android:entryValues="@array/swedensMunicipalitys"
+            android:dependency="WORKING_BEFORE_OR_DURING"/>
+
+        <SwitchPreference
+            android:key="CHURCH_FEE"
+            android:title="Do you pay Churche Fee?"
+            android:summary="If you give x% to your parish from your salary"
+            android:defaultValue="false"
+            android:dependency="WORKING_BEFORE_OR_DURING"
+            android:disableDependentsState="true"/>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

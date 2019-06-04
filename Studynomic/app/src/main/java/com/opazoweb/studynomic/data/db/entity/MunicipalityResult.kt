@@ -15,10 +15,6 @@ data class MunicipalityResult(
     @SerializedName("församling")
     val township: String,
 
-//    Kanske använda detta som ID senare
-    @SerializedName("församlings-kod")
-    val townshipCode: String,
-
     @SerializedName("kommun")
     val municipality: String,
 

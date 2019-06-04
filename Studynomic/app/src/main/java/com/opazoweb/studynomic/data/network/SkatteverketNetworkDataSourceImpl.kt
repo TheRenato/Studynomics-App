@@ -14,10 +14,10 @@ class SkatteverketNetworkDataSourceImpl(
     override val downloadMunicipalityTax: LiveData<MunicipalitySkatteverketResponse>
         get() = _downloadMunicipalityTax
 
-    override suspend fun fetchMunicipalityTax(city: String) {
+    override suspend fun fetchMunicipalityTax(city: String, township: String) {
         try {
             val fetchMunicipalityTax = municipalityApi
-                .getCurrentTax(city)
+                .getCurrentTax(city, township)
                 .await()
             _downloadMunicipalityTax.postValue(fetchMunicipalityTax)
         }

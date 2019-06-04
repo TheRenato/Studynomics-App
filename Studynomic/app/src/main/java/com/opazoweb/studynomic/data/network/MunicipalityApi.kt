@@ -18,6 +18,7 @@ interface MunicipalityApi {
     @GET("c67b320b-ffee-4876-b073-dd9236cd2a99")
     fun getCurrentTax(
         @Query("kommun") city: String,
+        @Query("församling") township: String = "%E5",
         @Query("år") year: Int = ZonedDateTime.now().year
 
     ):Deferred<MunicipalitySkatteverketResponse>
