@@ -18,12 +18,14 @@
             android:entryValues="@array/swedensMunicipalitys"
             android:dependency="WORKING_BEFORE_OR_DURING"/>
 
-        <SwitchPreference
+        <ListPreference
             android:key="CHURCH_FEE"
             android:title="Do you pay Churche Fee?"
             android:summary="If you give x% to your parish from your salary"
-            android:defaultValue="false"
+            android:defaultValue="NoChurchTax"
             android:dependency="WORKING_BEFORE_OR_DURING"
+            android:entries="@array/churchTaxEntries"
+            android:entryValues="@array/churchTaxValues"
             android:disableDependentsState="true"/>
 
 

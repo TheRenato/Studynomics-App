@@ -6,6 +6,8 @@ import android.preference.Preference
 import android.preference.PreferenceManager
 import com.opazoweb.studynomic.internal.ChurchTaxSystem
 
+const val CHURCH_FEE = "CHURCH_FEE"
+
 class ChurchTaxProviderImpl(context: Context) : ChurchTaxProvider {
     private val appContext = context.applicationContext
 
@@ -14,7 +16,8 @@ class ChurchTaxProviderImpl(context: Context) : ChurchTaxProvider {
 
 
     override fun getChurchTaxSystem(): ChurchTaxSystem {
-        val selectedName = preference.getString()
+        val selectedName = preference.getString(CHURCH_FEE, ChurchTaxSystem.NoChurchTax.name)
 
+        return ChurchTaxSystem.valueOf(selectedName!!)
     }
 }

@@ -293,5 +293,14 @@
         <item>ÖVERKALIX</item>
         <item>ÖVERTORNEÅ</item>
     </string-array>
-    
+
+    <string-array name="churchTaxValues">
+        <item>ChurchTax</item>
+        <item>NoChurchTax</item>
+    </string-array>
+
+    <string-array name="churchTaxEntries">
+        <item>"I'm paying Church Fee"</item>
+        <item>"Not paying Church Fee"</item>
+    </string-array>
 </resources>

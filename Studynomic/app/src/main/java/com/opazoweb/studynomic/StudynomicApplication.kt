@@ -1,9 +1,13 @@
 package com.opazoweb.studynomic
 
 import android.app.Application
+import android.preference.Preference
+import androidx.preference.PreferenceManager
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.opazoweb.studynomic.data.db.MunicipalityDatabase
 import com.opazoweb.studynomic.data.network.*
+import com.opazoweb.studynomic.data.provider.ChurchTaxProvider
+import com.opazoweb.studynomic.data.provider.ChurchTaxProviderImpl
 import com.opazoweb.studynomic.data.repository.MunicipalityRepository
 import com.opazoweb.studynomic.data.repository.MunicipalityRepositoryImpl
 import com.opazoweb.studynomic.ui.summery.work.SummeryWorkViewModelFactory
@@ -25,12 +29,14 @@ class StudynomicApplication : Application(), KodeinAware {
         bind() from singleton { MunicipalityApi(instance()) }
         bind<SkatteverketNetworkDataSource>() with singleton { SkatteverketNetworkDataSourceImpl(instance()) }
         bind<MunicipalityRepository>() with singleton { MunicipalityRepositoryImpl(instance(), instance()) }
-        bind() from provider { SummeryWorkViewModelFactory(instance()) }
+        bind<ChurchTaxProvider>() with singleton { ChurchTaxProviderImpl(instance()) }
+        bind() from provider { SummeryWorkViewModelFactory(instance(), instance()) }
 
     }
 
     override fun onCreate() {
         super.onCreate()
         AndroidThreeTen.init(this)
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false)
     }
 }

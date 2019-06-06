@@ -45,7 +45,8 @@ class MunicipalityRepositoryImpl (
 
     private suspend fun fetchMunicipalityTax() {
         skatteverketNetworkDataSource.fetchMunicipalityTax(
-            "KÖPING"
+            "KÖPING",
+            "%E5"
         )
     }
 
