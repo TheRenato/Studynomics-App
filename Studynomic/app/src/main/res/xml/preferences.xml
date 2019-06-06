@@ -9,7 +9,7 @@
             android:defaultValue="false"
             android:disableDependentsState="true"/>
 
-        <ListPreferencePreference
+        <ListPreference
             android:key="YOUR_RESIDENT"
             android:title="Municipality?"
             android:summary="The municipality you will be registered in while you are studying."

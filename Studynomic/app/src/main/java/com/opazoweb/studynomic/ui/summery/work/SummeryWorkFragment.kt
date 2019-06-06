@@ -11,12 +11,12 @@ import com.opazoweb.studynomic.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.summery_work_fragment.*
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.closestKodein
+import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
 class SummeryWorkFragment : ScopedFragment(), KodeinAware {
 
-    override val kodein by closestKodein()
+    override val kodein by kodein()
     private val viewModelFactory: SummeryWorkViewModelFactory by instance()
 
     companion object {
