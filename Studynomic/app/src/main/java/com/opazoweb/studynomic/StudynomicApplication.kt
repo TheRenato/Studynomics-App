@@ -28,7 +28,7 @@ class StudynomicApplication : Application(), KodeinAware {
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
         bind() from singleton { MunicipalityApi(instance()) }
         bind<SkatteverketNetworkDataSource>() with singleton { SkatteverketNetworkDataSourceImpl(instance()) }
-        bind<MunicipalityRepository>() with singleton { MunicipalityRepositoryImpl(instance(), instance()) }
+        bind<MunicipalityRepository>() with singleton { MunicipalityRepositoryImpl(instance(), instance() ) }
         bind<ChurchTaxProvider>() with singleton { ChurchTaxProviderImpl(instance()) }
         bind() from provider { SummeryWorkViewModelFactory(instance(), instance()) }
 
