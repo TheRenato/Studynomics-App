@@ -10,6 +10,11 @@ const val CHURCH_FEE = "CHURCH_FEE"
 
 class ChurchTaxProviderImpl(context: Context) : PreferenceProvider(context), ChurchTaxProvider {
 
+    private val appContext = context.applicationContext
+
+    private val preferences: SharedPreferences
+        get() = PreferenceManager.getDefaultSharedPreferences(appContext)
+
     override fun getChurchTaxSystem(): ChurchTaxSystem {
         val selectedName = preference.getString(CHURCH_FEE, ChurchTaxSystem.NoChurchTax.name)
 

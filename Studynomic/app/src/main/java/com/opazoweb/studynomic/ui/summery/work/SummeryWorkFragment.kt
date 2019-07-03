@@ -19,10 +19,6 @@ class SummeryWorkFragment : ScopedFragment(), KodeinAware {
     override val kodein by kodein()
     private val viewModelFactory: SummeryWorkViewModelFactory by instance()
 
-    companion object {
-        fun newInstance() = SummeryWorkFragment()
-    }
-
     private lateinit var viewModel: SummeryWorkViewModel
 
     override fun onCreateView(
@@ -39,16 +35,16 @@ class SummeryWorkFragment : ScopedFragment(), KodeinAware {
             .get(SummeryWorkViewModel::class.java)
 
         bindUI()
-
     }
 
     private fun bindUI() = launch {
         val currentTax = viewModel.tax.await()
+
         currentTax.observe(this@SummeryWorkFragment, Observer {
             if(it == null) return@Observer
 
-
-            summeryWorkFragmentMunicipalityText.text = it.municipality
+            print("Hi")
+            summeryWorkFragmentMunicipalityText.text = it.toString()
             summeryWorkFragmentTownshipText.text = it.township
             summeryWorkFragmentTaxText.text = it.taxSum.toString()
         })
