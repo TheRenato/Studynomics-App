@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="swedensMunicipalitys">
+        <item>ALE</item>
+        <item>ALINGSÅS</item>
+        <item>ALVESTA</item>
+        <item>ANEBY</item>
+        <item>ARBOGA</item>
+        <item>ARJEPLOG</item>
+        <item>ARVIDSJAUR</item>
+        <item>ARVIKA</item>
+        <item>ASKERSUND</item>
+        <item>AVESTA</item>
+        <item>BENGTSFORS</item>
+        <item>BERG</item>
+        <item>BJURHOLM</item>
+        <item>BJUV</item>
+        <item>BODEN</item>
+        <item>BOLLEBYGD</item>
+        <item>BOLLNÄS</item>
+        <item>BORGHOLM</item>
+        <item>BORLÄNGE</item>
+        <item>BORÅS</item>
+        <item>BOTKYRKA</item>
+        <item>BOXHOLM</item>
+        <item>BROMÖLLA</item>
+        <item>BRÄCKE</item>
+        <item>BURLÖV</item>
+        <item>BÅSTAD</item>
+        <item>DALS-ED</item>
+        <item>DANDERYD</item>
+        <item>DEGERFORS</item>
+        <item>DOROTEA</item>
+        <item>EDA</item>
+        <item>EKERÖ</item>
+        <item>EKSJÖ</item>
+        <item>EMMABODA</item>
+        <item>ENKÖPING</item>
+        <item>ESKILSTUNA</item>
+        <item>ESLÖV</item>
+        <item>ESSUNGA</item>
+        <item>FAGERSTA</item>
+        <item>FALKENBERG</item>
+        <item>FALKÖPING</item>
+        <item>FALUN</item>
+        <item>FILIPSTAD</item>
+        <item>FINSPÅNG</item>
+        <item>FLEN</item>
+        <item>FORSHAGA</item>
+        <item>FÄRGELANDA</item>
+        <item>GAGNEF</item>
+        <item>GISLAVED</item>
+        <item>GNESTA</item>
+        <item>GNOSJÖ</item>
+        <item>GOTLAND</item>
+        <item>GRUMS</item>
+        <item>GRÄSTORP</item>
+        <item>GULLSPÅNG</item>
+        <item>GÄLLIVARE</item>
+        <item>GÄVLE</item>
+        <item>GÖTEBORG</item>
+        <item>GÖTENE</item>
+        <item>HABO</item>
+        <item>HAGFORS</item>
+        <item>HALLSBERG</item>
+        <item>HALLSTAHAMMAR</item>
+        <item>HALMSTAD</item>
+        <item>HAMMARÖ</item>
+        <item>HANINGE</item>
+        <item>HAPARANDA</item>
+        <item>HEBY</item>
+        <item>HEDEMORA</item>
+        <item>HELSINGBORG</item>
+        <item>HERRLJUNGA</item>
+        <item>HJO</item>
+        <item>HOFORS</item>
+        <item>HUDDINGE</item>
+        <item>HUDIKSVALL</item>
+        <item>HULTSFRED</item>
+        <item>HYLTE</item>
+        <item>HÅBO</item>
+        <item>HÄLLEFORS</item>
+        <item>HÄRJEDALEN</item>
+        <item>HÄRNÖSAND</item>
+        <item>HÄRRYDA</item>
+        <item>HÄSSLEHOLM</item>
+        <item>HÖGANÄS</item>
+        <item>HÖGSBY</item>
+        <item>HÖRBY</item>
+        <item>HÖÖR</item>
+        <item>JOKKMOKK</item>
+        <item>JÄRFÄLLA</item>
+        <item>JÖNKÖPING</item>
+        <item>KALIX</item>
+        <item>KALMAR</item>
+        <item>KARLSBORG</item>
+        <item>KARLSHAMN</item>
+        <item>KARLSKOGA</item>
+        <item>KARLSKRONA</item>
+        <item>KARLSTAD</item>
+        <item>KATRINEHOLM</item>
+        <item>KIL</item>
+        <item>KINDA</item>
+        <item>KIRUNA</item>
+        <item>KLIPPAN</item>
+        <item>KNIVSTA</item>
+        <item>KRAMFORS</item>
+        <item>KRISTIANSTAD</item>
+        <item>KRISTINEHAMN</item>
+        <item>KROKOM</item>
+        <item>KUMLA</item>
+        <item>KUNGSBACKA</item>
+        <item>KUNGSÖR</item>
+        <item>KUNGÄLV</item>
+        <item>KÄVLINGE</item>
+        <item>KÖPING</item>
+        <item>LAHOLM</item>
+        <item>LANDSKRONA</item>
+        <item>LAXÅ</item>
+        <item>LEKEBERG</item>
+        <item>LEKSAND</item>
+        <item>LERUM</item>
+        <item>LESSEBO</item>
+        <item>LIDINGÖ</item>
+        <item>LIDKÖPING</item>
+        <item>LILLA EDET</item>
+        <item>LINDESBERG</item>
+        <item>LINKÖPING</item>
+        <item>LJUNGBY</item>
+        <item>LJUSDAL</item>
+        <item>LJUSNARSBERG</item>
+        <item>LOMMA</item>
+        <item>LUDVIKA</item>
+        <item>LULEÅ</item>
+        <item>LUND</item>
+        <item>LYCKSELE</item>
+        <item>LYSEKIL</item>
+        <item>MALMÖ</item>
+        <item>MALUNG-SÄLEN</item>
+        <item>MALÅ</item>
+        <item>MARIESTAD</item>
+        <item>MARK</item>
+        <item>MARKARYD</item>
+        <item>MELLERUD</item>
+        <item>MJÖLBY</item>
+        <item>MORA</item>
+        <item>MOTALA</item>
+        <item>MULLSJÖ</item>
+        <item>MUNKEDAL</item>
+        <item>MUNKFORS</item>
+        <item>MÖLNDAL</item>
+        <item>MÖNSTERÅS</item>
+        <item>MÖRBYLÅNGA</item>
+        <item>NACKA</item>
+        <item>NORA</item>
+        <item>NORBERG</item>
+        <item>NORDANSTIG</item>
+        <item>NORDMALING</item>
+        <item>NORRKÖPING</item>
+        <item>NORRTÄLJE</item>
+        <item>NORSJÖ</item>
+        <item>NYBRO</item>
+        <item>NYKVARN</item>
+        <item>NYKÖPING</item>
+        <item>NYNÄSHAMN</item>
+        <item>NÄSSJÖ</item>
+        <item>OCKELBO</item>
+        <item>OLOFSTRÖM</item>
+        <item>ORSA</item>
+        <item>ORUST</item>
+        <item>OSBY</item>
+        <item>OSKARSHAMN</item>
+        <item>OVANÅKER</item>
+        <item>OXELÖSUND</item>
+        <item>PAJALA</item>
+        <item>PARTILLE</item>
+        <item>PERSTORP</item>
+        <item>PITEÅ</item>
+        <item>RAGUNDA</item>
+        <item>ROBERTSFORS</item>
+        <item>RONNEBY</item>
+        <item>RÄTTVIK</item>
+        <item>SALA</item>
+        <item>SALEM</item>
+        <item>SANDVIKEN</item>
+        <item>SIGTUNA</item>
+        <item>SIMRISHAMN</item>
+        <item>SJÖBO</item>
+        <item>SKARA</item>
+        <item>SKELLEFTEÅ</item>
+        <item>SKINNSKATTEBERG</item>
+        <item>SKURUP</item>
+        <item>SKÖVDE</item>
+        <item>SMEDJEBACKEN</item>
+        <item>SOLLEFTEÅ</item>
+        <item>SOLLENTUNA</item>
+        <item>SOLNA</item>
+        <item>SORSELE</item>
+        <item>SOTENÄS</item>
+        <item>STAFFANSTORP</item>
+        <item>STENUNGSUND</item>
+        <item>STOCKHOLM</item>
+        <item>STORFORS</item>
+        <item>STORUMAN</item>
+        <item>STRÄNGNÄS</item>
+        <item>STRÖMSTAD</item>
+        <item>STRÖMSUND</item>
+        <item>SUNDBYBERG</item>
+        <item>SUNDSVALL</item>
+        <item>SUNNE</item>
+        <item>SURAHAMMAR</item>
+        <item>SVALÖV</item>
+        <item>SVEDALA</item>
+        <item>SVENLJUNGA</item>
+        <item>SÄFFLE</item>
+        <item>SÄTER</item>
+        <item>SÄVSJÖ</item>
+        <item>SÖDERHAMN</item>
+        <item>SÖDERKÖPING</item>
+        <item>SÖDERTÄLJE</item>
+        <item>SÖLVESBORG</item>
+        <item>TANUM</item>
+        <item>TIBRO</item>
+        <item>TIDAHOLM</item>
+        <item>TIERP</item>
+        <item>TIMRÅ</item>
+        <item>TINGSRYD</item>
+        <item>TJÖRN</item>
+        <item>TOMELILLA</item>
+        <item>TORSBY</item>
+        <item>TORSÅS</item>
+        <item>TRANEMO</item>
+        <item>TRANÅS</item>
+        <item>TRELLEBORG</item>
+        <item>TROLLHÄTTAN</item>
+        <item>TROSA</item>
+        <item>TYRESÖ</item>
+        <item>TÄBY</item>
+        <item>TÖREBODA</item>
+        <item>UDDEVALLA</item>
+        <item>ULRICEHAMN</item>
+        <item>UMEÅ</item>
+        <item>UPPLANDS VÄSBY</item>
+        <item>UPPLANDS-BRO</item>
+        <item>UPPSALA</item>
+        <item>UPPVIDINGE</item>
+        <item>VADSTENA</item>
+        <item>VAGGERYD</item>
+        <item>VALDEMARSVIK</item>
+        <item>VALLENTUNA</item>
+        <item>VANSBRO</item>
+        <item>VARA</item>
+        <item>VARBERG</item>
+        <item>VAXHOLM</item>
+        <item>VELLINGE</item>
+        <item>VETLANDA</item>
+        <item>VILHELMINA</item>
+        <item>VIMMERBY</item>
+        <item>VINDELN</item>
+        <item>VINGÅKER</item>
+        <item>VÅRGÅRDA</item>
+        <item>VÄNERSBORG</item>
+        <item>VÄNNÄS</item>
+        <item>VÄRMDÖ</item>
+        <item>VÄRNAMO</item>
+        <item>VÄSTERVIK</item>
+        <item>VÄSTERÅS</item>
+        <item>VÄXJÖ</item>
+        <item>YDRE</item>
+        <item>YSTAD</item>
+        <item>ÅMÅL</item>
+        <item>ÅNGE</item>
+        <item>ÅRE</item>
+        <item>ÅRJÄNG</item>
+        <item>ÅSELE</item>
+        <item>ÅSTORP</item>
+        <item>ÅTVIDABERG</item>
+        <item>ÄLMHULT</item>
+        <item>ÄLVDALEN</item>
+        <item>ÄLVKARLEBY</item>
+        <item>ÄLVSBYN</item>
+        <item>ÄNGELHOLM</item>
+        <item>ÖCKERÖ</item>
+        <item>ÖDESHÖG</item>
+        <item>ÖREBRO</item>
+        <item>ÖRKELLJUNGA</item>
+        <item>ÖRNSKÖLDSVIK</item>
+        <item>ÖSTERSUND</item>
+        <item>ÖSTERÅKER</item>
+        <item>ÖSTHAMMAR</item>
+        <item>ÖSTRA GÖINGE</item>
+        <item>ÖVERKALIX</item>
+        <item>ÖVERTORNEÅ</item>
+    </string-array>
+
+    <string-array name="stockholmTownship">
+        <item>ADOLF FREDRIKS FÖRSAMLING</item>
+        <item>BROMMA FÖRSAMLING</item>
+        <item>BRÄNNKYRKA FÖRSAMLING</item>
+        <item>ENGELBREKTS FÖRSAMLING</item>
+        <item>ENSKEDE-ÅRSTA FÖRSAMLING</item>
+        <item>FARSTA FÖRSAMLING</item>
+        <item>FINSKA FÖRSAMLINGEN</item>
+        <item>GUSTAV VASA FÖRSAMLING</item>
+        <item>HEDVIG ELEONORA FÖRSAMLING</item>
+        <item>HOVFÖRSAMLINGEN</item>
+        <item>HÄGERSTENS FÖRSAMLING</item>
+        <item>HÄSSELBY FÖRSAMLING</item>
+        <item>HÖGALIDS FÖRSAMLING</item>
+        <item>KATARINA FÖRSAMLING</item>
+        <item>MARIA MAGDALENA FÖRSAMLING</item>
+        <item>OSCARS FÖRSAMLING</item>
+        <item>S:T JOHANNES FÖRSAMLING</item>
+        <item>S:T MATTEUS FÖRSAMLING</item>
+        <item>SKARPNÄCKS FÖRSAMLING</item>
+        <item>SKÄRHOLMENS FÖRSAMLING</item>
+        <item>SOFIA FÖRSAMLING</item>
+        <item>SPÅNGA-KISTA FÖRSAMLING</item>
+        <item>STOCKHOLMS DOMKYRKOFÖRSAMLING</item>
+        <item>TYSKA S:TA GERTRUDS FÖRSAMLING</item>
+        <item>VANTÖRS FÖRSAMLING</item>
+        <item>VÄLLINGBY FÖRSAMLING</item>
+        <item>VÄSTERLEDS FÖRSAMLING</item>
+        <item>VÄSTERMALMS FÖRSAMLING</item>
+    </string-array>
+
+    <string-array name="churchTaxValues">
+        <item>ChurchTax</item>
+        <item>NoChurchTax</item>
+    </string-array>
+
+    <string-array name="WeeksToStudyEntries">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+    </string-array>
+
+    <string-array name="WeeksToStudyFullTimeValues">
+        <item>175686</item>
+        <item>171180</item>
+        <item>166674</item>
+        <item>162168</item>
+        <item>157662</item>
+        <item>153157</item>
+        <item>148651</item>
+        <item>144145</item>
+        <item>139639</item>
+        <item>135133</item>
+        <item>130627</item>
+        <item>126121</item>
+        <item>121616</item>
+        <item>117110</item>
+        <item>112604</item>
+        <item>108098</item>
+        <item>103592</item>
+        <item>99086</item>
+        <item>94581</item>
+        <item>90075</item>
+        <item>85569</item>
+        <item>81063</item>
+        <item>76557</item>
+        <item>72051</item>
+        <item>67545</item>
+        <item>63040</item>
+    </string-array>
+
+</resources>

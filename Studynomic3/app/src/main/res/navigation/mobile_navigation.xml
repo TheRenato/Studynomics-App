@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@id/summeryFragment">
+
+    <fragment android:id="@+id/summeryFragment" android:name="com.opazoweb.studynomic3.ui.summery.SummeryFragment"
+              android:label="Summery" tools:layout="@layout/summery_fragment"/>
+
+    <fragment android:id="@+id/summeryCSNFragment"
+              android:name="com.opazoweb.studynomic3.ui.csn.CsnSummeryFragment"
+              android:label="CSN Summery" tools:layout="@layout/csn_summery_fragment"/>
+
+    <fragment android:id="@+id/summeryWorkFragment"
+              android:name="com.opazoweb.studynomic3.ui.work.WorkSummeryFragment"
+              android:label="Work Summery" tools:layout="@layout/work_summery_fragment"/>
+
+    <fragment android:id="@+id/settingsFragment"
+              android:name="com.opazoweb.studynomic3.ui.settings.SettingsFragment"
+              android:label="Settings"/>
+
+</navigation>
