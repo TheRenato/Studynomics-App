@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Studynomic3</string>
+    <string name="app_name">Studynomic</string>
+    <string name="hello_blank_fragment">Hello. Need to work</string>
+    <string name="summery">Summery</string>
+    <string name="settings">Settings</string>
+    <string name="work_summery">Work Summery</string>
+    <string name="csn_summery">CSN Summery</string>
 </resources>

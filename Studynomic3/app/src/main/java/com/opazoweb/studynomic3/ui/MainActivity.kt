@@ -1,7 +1,8 @@
-package com.opazoweb.studynomic3
+package com.opazoweb.studynomic3.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.opazoweb.studynomic3.R
 
 class MainActivity : AppCompatActivity() {
 
