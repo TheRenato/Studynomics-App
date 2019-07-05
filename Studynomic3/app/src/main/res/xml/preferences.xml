@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="Your Work">
+
+        <SwitchPreference
+                android:key="WORKING_BEFORE_OR_DURING"
+                android:title="Will you or have you work?"
+                android:summary="If you have an employment before your studies or planing to work when you are studying"
+                android:icon="@drawable/ic_work_black_24dp"
+                android:defaultValue="false"
+                android:disableDependentsState="false"/>
+
+        <ListPreference
+                android:key="YOUR_RESIDENT"
+                android:title="Municipality?"
+                android:summary="The municipality you will be registered in while you are studying."
+                android:defaultValue="STOCKHOLM"
+                android:entries="@array/swedensMunicipalitys"
+                android:entryValues="@array/swedensMunicipalitys"
+                android:dependency="WORKING_BEFORE_OR_DURING"/>
+
+        <SwitchPreference
+                android:key="CHURCH_FEE"
+                android:title="Do you pay Churche Fee?"
+                android:summary="If you give x% to your parish from your salary"
+                android:defaultValue="false"
+                android:dependency="WORKING_BEFORE_OR_DURING"
+                android:disableDependentsState="false"/>
+
+        <ListPreference
+                android:key="YOUR_TOWNSHIP"
+                android:title="Parish?"
+                android:summary="The parish you will belong to while you are studying."
+                android:defaultValue="ADOLF FREDRIKS FÖRSAMLING"
+                android:entries="@array/stockholmTownship"
+                android:entryValues="@array/stockholmTownship"
+                android:dependency="CHURCH_FEE"/>
+
+        <EditTextPreference
+                android:key="FULLTIME_PAY"
+                android:title="Your fulltime pay:"
+                android:summary="How much you would get payed if you had worked fulltime"
+                android:inputType="number"
+                android:defaultValue="20000"
+                android:dependency="WORKING_BEFORE_OR_DURING"/>
+
+        <EditTextPreference
+                android:key="WORK_LEAVE"
+                android:title="Work leave for Studies:"
+                android:summary="How much leave from work will you take for studies"
+                android:inputType="number"
+                android:defaultValue="90"
+                android:dependency="WORKING_BEFORE_OR_DURING"/>
+
+
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="Your Study">
+
+        <EditTextPreference
+                android:key="START_DATE"
+                android:summary="Choose when your semester begins"
+                android:title="Start Date"
+                android:defaultValue="20190902"
+                android:inputType="date" />
+
+        <EditTextPreference
+                android:key="END_DATE"
+                android:summary="Choose when your semester ends. If it's after new year, then put 20191231"
+                android:title="End Date"
+                android:defaultValue="20191231"
+                android:inputType="date"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
