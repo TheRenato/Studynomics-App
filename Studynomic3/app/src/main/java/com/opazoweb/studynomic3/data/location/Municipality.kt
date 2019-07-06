@@ -1,0 +1,59 @@
+package com.opazoweb.studynomic3.data.location
+
+import kotlin.math.roundToInt
+
+class Municipality (
+    val name: String,
+    var sumExclChurchFee: Double,
+    var burialFee: Double,
+    var fromYear: Int
+    ) {
+        var townshipMap: MutableMap<String, Township> = mutableMapOf()
+
+
+        private fun isYearSame (checkYear: Int):Boolean {
+            return fromYear == checkYear
+        }
+
+        fun updateMunicipality (newSumInclChurchFee: Double, newBurialFee: Double, newYear: Int) {
+            if (isYearSame(newYear)) {
+
+            } else {
+                sumExclChurchFee = newSumInclChurchFee
+                burialFee = newBurialFee
+                fromYear = newYear
+            }
+        }
+
+        fun addTownship (
+            name: String,
+            belongsTo: String,
+            sumInclChurchFee: Double,
+            churchFee: Double,
+            fromYear: Int
+        ) {
+            townshipMap.put("$name",
+                Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
+            )
+
+        }
+
+        fun municipalityTaxTable(): Int {
+            val taxTabel = (sumExclChurchFee + burialFee).roundToInt()
+
+            return taxTabel
+        }
+
+        fun townshipTaxTable(townshipName: String): Int {
+            val taxTable: Int = ((townshipMap[townshipName]!!.sumInclChurchFee) + burialFee).roundToInt()
+
+            return taxTable
+        }
+
+        fun townshipArray(): Array<CharSequence> {
+            val array: ArrayList<String> = ArrayList(townshipMap.keys)
+            val cs: Array<CharSequence> = array.toArray(arrayOfNulls<CharSequence>(array.size))
+
+            return cs
+        }
+}
