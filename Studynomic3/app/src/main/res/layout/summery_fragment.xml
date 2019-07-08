@@ -49,4 +49,26 @@
             android:id="@+id/textviewSummeryStudyDate"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textviewSummeryMunicipality"/>
 
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Your Tax table is:"
+            android:textSize="18sp"
+            android:id="@+id/textviewSummeryTaxTableDesc"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textviewSummeryStudyDateDesc"
+            app:layout_constraintEnd_toStartOf="@+id/textviewSummeryTaxTable" android:layout_marginEnd="8dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="TAX TABLE"
+            android:gravity="center_horizontal"
+            android:id="@+id/textviewSummeryTaxTable"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textviewSummeryStudyDate"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,5 @@
     <string name="settings">Settings</string>
     <string name="work_summery">Work Summery</string>
     <string name="csn_summery">CSN Summery</string>
+    <string name="default_Municipalety">STOCKHOLM</string>
 </resources>
