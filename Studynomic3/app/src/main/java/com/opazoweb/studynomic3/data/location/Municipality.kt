@@ -32,11 +32,15 @@ class Municipality (
             churchFee: Double,
             fromYear: Int
         ) {
-            townshipMap.put(
-                name,
-                Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
-            )
+            if (townshipMap.containsKey(name)) {
+                if (fromYear > townshipMap[name]!!.fromYear) {
+                    townshipMap[name] = Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
+                } else {
 
+                }
+            } else {
+                townshipMap[name] = Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
+            }
         }
 
         fun municipalityTaxTable(): Int {

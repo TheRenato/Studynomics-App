@@ -58,12 +58,26 @@ class MunicipalityCollector(current: Context?) {
                 val churchFee = strArray[6].toDouble()
 
 //                Log.e("Inserting Muni", name)
-                municipalityMap.put(name, Municipality(name, sumExclChurchFee, burialFee, year))
-                municipalityMap[name]!!.townshipMap.put(
-                    township,
-                    Township(township, name, sumInclChurchFee, churchFee, year)
-                )
-//                Log.e("MuniMap TaxTable", municipalityMap[name]?.municipalityTaxTable().toString())
+                if (municipalityMap.containsKey(name)) {
+                   if (year > municipalityMap[name]!!.fromYear) {
+
+                       municipalityMap[name] = Municipality(name, sumExclChurchFee, burialFee, year)
+                       municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
+                   } else {
+
+                       municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
+                   }
+                } else {
+
+                    municipalityMap[name] = Municipality(name, sumExclChurchFee, burialFee, year)
+                    municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
+                }
+
+//                Log.e("MuniMap township", municipalityMap[name]?.municipalityTaxTable().toString())
+
+
+                val defTownArr = municipalityMap[name]?.townshipArray()
+                defTownArr?.forEach { Log.e("Town", it.toString()) }
             }
 
         }
