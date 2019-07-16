@@ -1,6 +1,7 @@
 package com.opazoweb.studynomic3.data.location
 
 import android.content.Context
+import android.util.Log
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
@@ -10,8 +11,8 @@ import java.nio.charset.Charset
 class MunicipalityCollector(current: Context?) {
 
     private var municipalityMap = mutableMapOf<String, Municipality>()
-    private var context: Context = current!!.applicationContext
-    private val resources = context.resources
+    private var context = current?.applicationContext
+    private val resources = context?.resources
 
     init {
         val fileName1 = "taxes2019"
@@ -19,6 +20,7 @@ class MunicipalityCollector(current: Context?) {
     }
 
     fun getMunicipalityMap():MutableMap<String, Municipality> {
+//        Log.e("MuniMap", municipalityMap.keys.toString())
         return municipalityMap
     }
 
@@ -26,15 +28,16 @@ class MunicipalityCollector(current: Context?) {
     private fun csvRead(fileName: String) {
 
 
-        val ins: InputStream = resources.openRawResource(
+        val ins: InputStream? = resources?.openRawResource(
             resources.getIdentifier(
                 fileName,
                 "raw",
-                "NULL"
+                context?.packageName
             )
         )
 
-        var reader = BufferedReader(
+
+        val reader = BufferedReader(
             InputStreamReader(ins, Charset.forName("UTF-8"))
         )
 
@@ -54,17 +57,19 @@ class MunicipalityCollector(current: Context?) {
                 val burialFee = strArray[5].toDouble()
                 val churchFee = strArray[6].toDouble()
 
+//                Log.e("Inserting Muni", name)
                 municipalityMap.put(name, Municipality(name, sumExclChurchFee, burialFee, year))
                 municipalityMap[name]!!.townshipMap.put(
                     township,
                     Township(township, name, sumInclChurchFee, churchFee, year)
                 )
+//                Log.e("MuniMap TaxTable", municipalityMap[name]?.municipalityTaxTable().toString())
             }
 
         }
 
 
-        ins.close()
+        ins?.close()
         reader.close()
     }
 }

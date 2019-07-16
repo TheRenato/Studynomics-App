@@ -3,6 +3,7 @@ package com.opazoweb.studynomic3.ui.summery
 import android.content.Context
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import androidx.preference.PreferenceManager
 
 import com.opazoweb.studynomic3.R
+import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.location.MunicipalityCollector
 import com.opazoweb.studynomic3.ui.MainActivity
 import kotlinx.android.synthetic.main.summery_fragment.*
@@ -20,10 +22,9 @@ class SummeryFragment : Fragment() {
     companion object {
         fun newInstance() = SummeryFragment()
     }
-    private val current: Context? = activity?.applicationContext
-    private val municipalityCollector = MunicipalityCollector(current)
-    private val municipalityMap = municipalityCollector.getMunicipalityMap()
 
+    private lateinit var mainActivity: MainActivity
+    private lateinit var municipalityMap:MutableMap<String, Municipality>
 
     private lateinit var viewModel: SummeryViewModel
 
@@ -38,6 +39,12 @@ class SummeryFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(SummeryViewModel::class.java)
 
+
+        mainActivity = (activity as MainActivity)
+        municipalityMap = mainActivity.getMunicipalityMap()
+
+        Log.e("MuniMap", municipalityMap.keys.toString())
+
         summery()
     }
 
@@ -45,9 +52,9 @@ class SummeryFragment : Fragment() {
         val sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
 
 
-        val dateFromTO = sharedpref.getString("START_DATE", "NULL") + " - " +
-                sharedpref.getString("END_DATE", "NULL")
-        val municipality = sharedpref.getString("YOUR_RESIDENT", "NULL").toString()
+        val dateFromTO = sharedpref.getString("START_DATE", "20190902") + " - " +
+                sharedpref.getString("END_DATE", "20191231")
+        val municipality = sharedpref.getString("YOUR_RESIDENT", "STOCKHOLM").toString()
 
         textviewSummeryMunicipality.text = municipality
         textviewSummeryStudyDate.text = dateFromTO

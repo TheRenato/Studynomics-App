@@ -15,11 +15,11 @@ class Municipality (
             return fromYear == checkYear
         }
 
-        fun updateMunicipality (newSumInclChurchFee: Double, newBurialFee: Double, newYear: Int) {
+        fun updateMunicipality (newSumExclChurchFee: Double, newBurialFee: Double, newYear: Int) {
             if (isYearSame(newYear)) {
 
             } else {
-                sumExclChurchFee = newSumInclChurchFee
+                sumExclChurchFee = newSumExclChurchFee
                 burialFee = newBurialFee
                 fromYear = newYear
             }
@@ -32,7 +32,8 @@ class Municipality (
             churchFee: Double,
             fromYear: Int
         ) {
-            townshipMap.put("$name",
+            townshipMap.put(
+                name,
                 Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
             )
 
@@ -45,9 +46,8 @@ class Municipality (
         }
 
         fun townshipTaxTable(townshipName: String): Int {
-            val taxTable: Int = ((townshipMap[townshipName]!!.sumInclChurchFee) + burialFee).roundToInt()
 
-            return taxTable
+            return ((townshipMap[townshipName]!!.sumInclChurchFee) + burialFee).roundToInt()
         }
 
         fun townshipArray(): Array<CharSequence> {
