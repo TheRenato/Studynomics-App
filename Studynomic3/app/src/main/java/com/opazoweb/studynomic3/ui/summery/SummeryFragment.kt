@@ -1,6 +1,7 @@
 package com.opazoweb.studynomic3.ui.summery
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,7 @@ class SummeryFragment : Fragment() {
 
     private lateinit var mainActivity: MainActivity
     private lateinit var municipalityMap:MutableMap<String, Municipality>
+    private lateinit var sharedpref: SharedPreferences
 
     private lateinit var viewModel: SummeryViewModel
 
@@ -42,22 +44,36 @@ class SummeryFragment : Fragment() {
 
         mainActivity = (activity as MainActivity)
         municipalityMap = mainActivity.getMunicipalityMap()
-
-        Log.e("MuniMap", municipalityMap.keys.toString())
+        sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
 
         summery()
     }
 
     private fun summery() {
-        val sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
 
 
-        val dateFromTO = sharedpref.getString("START_DATE", "20190902") + " - " +
+        val dateFromTO:String = sharedpref.getString("START_DATE", "20190902")!! + " - " +
                 sharedpref.getString("END_DATE", "20191231")
-        val municipality = sharedpref.getString("YOUR_RESIDENT", "STOCKHOLM").toString()
+        val municipality:String = sharedpref.getString("YOUR_RESIDENT", "STOCKHOLM")!!.toString()
 
         textviewSummeryMunicipality.text = municipality
         textviewSummeryStudyDate.text = dateFromTO
-        textviewSummeryTaxTable.text = municipalityMap[municipality]?.municipalityTaxTable().toString()
+        textviewSummeryTaxTable.text = taxTable(municipality)
+    }
+
+    private fun taxTable(municipality: String):String {
+        val isChurch = sharedpref.getBoolean("CHURCH_FEE", false)
+        if (isChurch) {
+            val townshipName:String? = sharedpref.getString("YOUR_TOWNSHIP", "NULL")
+
+            if (townshipName != "NULL") {
+                return municipalityMap[municipality]?.townshipTaxTable(townshipName!!).toString()
+            } else {
+                return "Please Select a Parish"
+            }
+        } else {
+            return municipalityMap[municipality]!!.municipalityTaxTable().toString()
+        }
+
     }
 }
