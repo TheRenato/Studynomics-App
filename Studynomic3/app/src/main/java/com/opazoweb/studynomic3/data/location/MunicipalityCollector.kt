@@ -58,12 +58,10 @@ class MunicipalityCollector(current: Context?) {
 
 
                 if (municipalityMap.containsKey(name)) {
-                   if (year > municipalityMap[name]!!.fromYear) {
-
+                   if (!municipalityMap[name]!!.isYearSame(year)) {
                        municipalityMap[name] = Municipality(name, sumExclChurchFee, burialFee, year)
                        municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
                    } else {
-
                        municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
                    }
                 } else {

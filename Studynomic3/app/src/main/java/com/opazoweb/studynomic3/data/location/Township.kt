@@ -7,19 +7,10 @@ class Township (
     var churchFee: Double,
     var fromYear: Int
 ) {
-    private fun isYearSame (checkYear: Int):Boolean {
+    fun isYearSame (checkYear: Int):Boolean {
         return fromYear == checkYear
     }
 
-    fun updateTownship (newSumInclChurchFee: Double, newChurchFee: Double, newYear: Int) {
-        if (isYearSame(newYear)) {
-
-        } else {
-            sumInclChurchFee = newSumInclChurchFee
-            churchFee = newChurchFee
-            fromYear = newYear
-        }
-    }
 
     fun doesBelongTo(MunicipalityName: String): Boolean {
         return belongsTo == MunicipalityName

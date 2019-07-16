@@ -1,5 +1,6 @@
 package com.opazoweb.studynomic3.data.location
 
+import com.opazoweb.studynomic3.data.taxes.TaxTable
 import kotlin.math.roundToInt
 
 class Municipality (
@@ -10,19 +11,8 @@ class Municipality (
     ) {
         var townshipMap: MutableMap<String, Township> = mutableMapOf()
 
-
-        private fun isYearSame (checkYear: Int):Boolean {
+        fun isYearSame (checkYear: Int):Boolean {
             return fromYear == checkYear
-        }
-
-        fun updateMunicipality (newSumExclChurchFee: Double, newBurialFee: Double, newYear: Int) {
-            if (isYearSame(newYear)) {
-
-            } else {
-                sumExclChurchFee = newSumExclChurchFee
-                burialFee = newBurialFee
-                fromYear = newYear
-            }
         }
 
         fun addTownship (
@@ -33,7 +23,7 @@ class Municipality (
             fromYear: Int
         ) {
             if (townshipMap.containsKey(name)) {
-                if (fromYear > townshipMap[name]!!.fromYear) {
+                if (!townshipMap[name]!!.isYearSame(fromYear)) {
                     townshipMap[name] = Township(name, belongsTo, sumInclChurchFee, churchFee, fromYear)
                 } else {
 
@@ -44,9 +34,7 @@ class Municipality (
         }
 
         fun municipalityTaxTable(): Int {
-            val taxTabel = (sumExclChurchFee + burialFee).roundToInt()
-
-            return taxTabel
+            return (sumExclChurchFee + burialFee).roundToInt()
         }
 
         fun townshipTaxTable(townshipName: String): Int {

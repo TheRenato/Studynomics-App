@@ -10,6 +10,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.opazoweb.studynomic3.R
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.location.MunicipalityCollector
+import com.opazoweb.studynomic3.data.taxes.TaxTable
+import com.opazoweb.studynomic3.data.taxes.TaxTableCollector
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var context: Context
     private lateinit var municipalityMap:MutableMap<String, Municipality>
+    private lateinit var taxTableMap:MutableMap<String, TaxTable>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         val municipalityCollector = MunicipalityCollector(context)
         municipalityMap = municipalityCollector.getMunicipalityMap()
 
+        val taxTableCollector = TaxTableCollector(context)
+        taxTableMap = taxTableCollector.gettaxTableMap()
+
 
     }
 
@@ -43,6 +49,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getMunicipalityMap() :MutableMap<String, Municipality> {
+        return municipalityMap
+    }
+
+    fun getTaxTableMap() :MutableMap<String, Municipality> {
         return municipalityMap
     }
 }

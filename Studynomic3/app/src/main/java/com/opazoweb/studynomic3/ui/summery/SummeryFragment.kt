@@ -68,7 +68,6 @@ class SummeryFragment : Fragment() {
         if (isChurch) {
             val townshipName:String? = sharedpref.getString("YOUR_TOWNSHIP", "NULL")
             if (municipalityMap[municipality]!!.isTownship(townshipName!!)) {
-                Log.e("town is", townshipName)
                 tTable = municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
             } else {
                 tTable = "Please Select a Parish"
@@ -78,4 +77,6 @@ class SummeryFragment : Fragment() {
         }
         return tTable
     }
+
+
 }
