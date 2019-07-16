@@ -25,6 +25,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
 
         val listTownship: ListPreference = findPreference("YOUR_TOWNSHIP") as ListPreference
+        val listMunicipality: ListPreference = findPreference("YOUR_RESIDENT") as ListPreference
+
+//        listMunicipality.setOnPreferenceClickListener {
+//            listTownship.setValueIndex(1)
+//            true
+//        }
 
         listTownship.entries = municipalityMap[defaultMunicipality]?.townshipArray()
         listTownship.entryValues = municipalityMap[defaultMunicipality]?.townshipArray()

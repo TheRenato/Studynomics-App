@@ -34,7 +34,7 @@
                 android:key="YOUR_TOWNSHIP"
                 android:title="Parish?"
                 android:summary="The parish you will belong to while you are studying."
-                android:defaultValue="ADOLF FREDRIKS FÖRSAMLING"
+                android:defaultValue="NULL"
                 android:entries="@array/stockholmTownship"
                 android:entryValues="@array/stockholmTownship"
                 android:dependency="CHURCH_FEE"/>

@@ -20,7 +20,6 @@ class MunicipalityCollector(current: Context?) {
     }
 
     fun getMunicipalityMap():MutableMap<String, Municipality> {
-//        Log.e("MuniMap", municipalityMap.keys.toString())
         return municipalityMap
     }
 
@@ -57,7 +56,7 @@ class MunicipalityCollector(current: Context?) {
                 val burialFee = strArray[5].toDouble()
                 val churchFee = strArray[6].toDouble()
 
-//                Log.e("Inserting Muni", name)
+
                 if (municipalityMap.containsKey(name)) {
                    if (year > municipalityMap[name]!!.fromYear) {
 
@@ -73,11 +72,8 @@ class MunicipalityCollector(current: Context?) {
                     municipalityMap[name]!!.addTownship(township, name, sumInclChurchFee, churchFee, year)
                 }
 
-//                Log.e("MuniMap township", municipalityMap[name]?.municipalityTaxTable().toString())
 
 
-                val defTownArr = municipalityMap[name]?.townshipArray()
-                defTownArr?.forEach { Log.e("Town", it.toString()) }
             }
 
         }

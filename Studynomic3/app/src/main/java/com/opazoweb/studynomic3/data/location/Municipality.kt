@@ -60,4 +60,8 @@ class Municipality (
 
             return cs
         }
+
+        fun isTownship (townshipName: String): Boolean{
+            return townshipMap.containsKey(townshipName)
+        }
 }

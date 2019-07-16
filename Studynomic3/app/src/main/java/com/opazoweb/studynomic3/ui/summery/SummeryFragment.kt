@@ -27,6 +27,7 @@ class SummeryFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var municipalityMap:MutableMap<String, Municipality>
     private lateinit var sharedpref: SharedPreferences
+    private var isChurch:Boolean = false
 
     private lateinit var viewModel: SummeryViewModel
 
@@ -45,6 +46,7 @@ class SummeryFragment : Fragment() {
         mainActivity = (activity as MainActivity)
         municipalityMap = mainActivity.getMunicipalityMap()
         sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
+        isChurch = sharedpref.getBoolean("CHURCH_FEE", false)
 
         summery()
     }
@@ -62,18 +64,18 @@ class SummeryFragment : Fragment() {
     }
 
     private fun taxTable(municipality: String):String {
-        val isChurch = sharedpref.getBoolean("CHURCH_FEE", false)
+        val tTable: String
         if (isChurch) {
             val townshipName:String? = sharedpref.getString("YOUR_TOWNSHIP", "NULL")
-
-            if (townshipName != "NULL") {
-                return municipalityMap[municipality]?.townshipTaxTable(townshipName!!).toString()
+            if (municipalityMap[municipality]!!.isTownship(townshipName!!)) {
+                Log.e("town is", townshipName)
+                tTable = municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
             } else {
-                return "Please Select a Parish"
+                tTable = "Please Select a Parish"
             }
         } else {
-            return municipalityMap[municipality]!!.municipalityTaxTable().toString()
+            tTable = municipalityMap[municipality]!!.municipalityTaxTable().toString()
         }
-
+        return tTable
     }
 }
