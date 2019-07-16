@@ -7,68 +7,79 @@
         android:layout_height="match_parent"
         tools:context="com.opazoweb.studynomic3.ui.summery.SummeryFragment">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="You Live in:"
-            android:id="@+id/textviewSummeryMunicipalityDesc"
-            app:layout_constraintEnd_toStartOf="@+id/textviewSummeryMunicipality" android:layout_marginEnd="8dp"/>
+    <TableLayout
+            android:layout_width="395dp"
+            android:layout_height="632dp" tools:layout_editor_absoluteY="91dp" tools:layout_editor_absoluteX="8dp">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Municipality"
-            android:textSize="18sp"
-            android:gravity="center_horizontal"
-            android:id="@+id/textviewSummeryMunicipality"
-    />
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="You will studie between:"
-            android:textSize="18sp"
-            android:id="@+id/textviewSummeryStudyDateDesc"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textviewSummeryMunicipalityDesc"
-            app:layout_constraintEnd_toStartOf="@+id/textviewSummeryStudyDate" android:layout_marginEnd="8dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You Live in:"
+                android:id="@+id/textviewSummeryMunicipalityDesc"
+                android:layout_marginEnd="8dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Date"
-            android:gravity="center_horizontal"
-            android:id="@+id/textviewSummeryStudyDate"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textviewSummeryMunicipality"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Municipality"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryMunicipality"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You will studie between:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryStudyDateDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="Your Tax table is:"
-            android:textSize="18sp"
-            android:id="@+id/textviewSummeryTaxTableDesc"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textviewSummeryStudyDateDesc"
-            app:layout_constraintEnd_toStartOf="@+id/textviewSummeryTaxTable" android:layout_marginEnd="8dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:id="@+id/textviewSummeryStudyDate"
+                android:layout_marginTop="8dp"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="TAX TABLE"
-            android:gravity="center_horizontal"
-            android:id="@+id/textviewSummeryTaxTable"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textviewSummeryStudyDate"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Tax table is:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryTaxTableDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TAX TABLE"
+                android:id="@+id/textviewSummeryTaxTable"
+                android:layout_marginTop="8dp"/>
+    </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Salery after tax is:"
+                    android:textSize="18sp"
+                    android:id="@+id/textviewSummeryYourPayDesc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Income after Tax"
+                    android:id="@+id/textviewSummeryYourPay"
+                    android:layout_marginTop="8dp"/>
+        </TableRow>
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

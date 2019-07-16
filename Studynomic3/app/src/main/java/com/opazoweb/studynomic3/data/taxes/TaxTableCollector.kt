@@ -47,27 +47,30 @@ class TaxTableCollector (current: Context?) {
             if (rows != null) {
                 val strArray = rows.split(";")
 
-                val year = strArray[0].toInt()
+                if (strArray[4] == "") {
+
+                } else {
+                    val year = strArray[0].toInt()
 //                val days = strArray[1]
-                val tablename = strArray[2]
-                val payFrom = strArray[3].toInt()
-                val payTo = strArray[4].toInt()
-                val taxInSwedishKr = strArray[5].toInt()
+                    val tablename = strArray[2]
+                    val payFrom = strArray[3].toInt()
+                    val payTo = strArray[4].toInt()
+                    val taxInSwedishKr = strArray[5].toInt()
 
 
-                if (taxTableMap.containsKey(tablename)) {
-                    if (!taxTableMap[tablename]!!.isYearSame(year)) {
+                    if (taxTableMap.containsKey(tablename)) {
+                        if (!taxTableMap[tablename]!!.isYearSame(year)) {
+                            taxTableMap[tablename] = TaxTable(tablename, year)
+                            taxTableMap[tablename]!!.addRange(payFrom, payTo, taxInSwedishKr, year)
+                        } else {
+                            taxTableMap[tablename]!!.addRange(payFrom, payTo, taxInSwedishKr, year)
+                        }
+                    } else {
+
                         taxTableMap[tablename] = TaxTable(tablename, year)
                         taxTableMap[tablename]!!.addRange(payFrom, payTo, taxInSwedishKr, year)
-                    } else {
-                        taxTableMap[tablename]!!.addRange(payFrom, payTo, taxInSwedishKr, year)
                     }
-                } else {
-
-                    taxTableMap[tablename] = TaxTable(tablename, year)
-                    taxTableMap[tablename]!!.addRange(payFrom, payTo, taxInSwedishKr, year)
                 }
-
 
 
             }

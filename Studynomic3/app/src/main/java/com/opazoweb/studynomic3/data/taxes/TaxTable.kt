@@ -1,5 +1,6 @@
 package com.opazoweb.studynomic3.data.taxes
 
+import android.util.Log
 import kotlin.math.roundToInt
 
 class TaxTable(
@@ -39,7 +40,8 @@ class TaxTable(
     }
 
     fun leftAfterTaxes (income: Int, burialFee: Double): Int {
-        val burialFeeInt = (income * burialFee).roundToInt()
+        val burialFeeInPro = burialFee/100
+        val burialFeeInt = (income * burialFeeInPro).roundToInt()
         val tableTax = getTax(income)
         val left = income - burialFeeInt - tableTax
 

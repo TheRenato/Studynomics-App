@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         return municipalityMap
     }
 
-    fun getTaxTableMap() :MutableMap<String, Municipality> {
-        return municipalityMap
+    fun getTaxTableMap() :MutableMap<String, TaxTable> {
+        return taxTableMap
     }
 }
