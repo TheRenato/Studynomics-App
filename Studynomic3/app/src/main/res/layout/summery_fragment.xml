@@ -13,12 +13,12 @@
 
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="You Live in:"
-                android:id="@+id/textviewSummeryMunicipalityDesc"
-                android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You Live in:"
+                    android:id="@+id/textviewSummeryMunicipalityDesc"
+                    android:layout_marginEnd="8dp" android:textSize="18sp"/>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -38,12 +38,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:id="@+id/textviewSummeryStudyDate"
-                android:layout_marginTop="8dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:id="@+id/textviewSummeryStudyDate"
+                    android:layout_marginTop="8dp" android:textSize="18sp"/>
         </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
@@ -56,12 +56,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TAX TABLE"
-                android:id="@+id/textviewSummeryTaxTable"
-                android:layout_marginTop="8dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAX TABLE"
+                    android:id="@+id/textviewSummeryTaxTable"
+                    android:layout_marginTop="8dp" android:textSize="18sp"/>
     </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="Income after Tax"
                     android:id="@+id/textviewSummeryYourPay"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp" android:textSize="18sp"/>
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
