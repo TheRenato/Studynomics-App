@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.preference.PreferenceManager
 import com.opazoweb.studynomic3.R
+import com.opazoweb.studynomic3.data.calculators.WorkCalculator
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.taxes.TaxTable
 import com.opazoweb.studynomic3.ui.MainActivity
@@ -25,6 +26,7 @@ class SummeryFragment : Fragment() {
     private lateinit var taxTableMap:MutableMap<String, TaxTable>
     private lateinit var sharedpref: SharedPreferences
     private var isChurch:Boolean = false
+    private lateinit var workCalculator:WorkCalculator
 
     private lateinit var viewModel: SummeryViewModel
 
@@ -46,6 +48,8 @@ class SummeryFragment : Fragment() {
         sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
         isChurch = sharedpref.getBoolean("CHURCH_FEE", false)
 
+        workCalculator = WorkCalculator(municipalityMap, taxTableMap, sharedpref)
+
         summery()
     }
 
@@ -59,29 +63,8 @@ class SummeryFragment : Fragment() {
 
         textviewSummeryMunicipality.text = municipality
         textviewSummeryStudyDate.text = dateFromTO
-        textviewSummeryTaxTable.text = taxTable(municipality)
-        textviewSummeryYourPay.text = payAfterTaxes(income, municipality)
+        textviewSummeryTaxTable.text = workCalculator.taxTable(municipality, isChurch)
+        textviewSummeryYourPay.text = workCalculator.payAfterTaxes(income, municipality, isChurch)
     }
 
-    private fun taxTable(municipality: String):String {
-        val tTable: String
-        if (isChurch) {
-            val townshipName:String? = sharedpref.getString("YOUR_TOWNSHIP", "NULL")
-            if (municipalityMap[municipality]!!.isTownship(townshipName!!)) {
-                tTable = municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
-            } else {
-                tTable = "Please Select a Parish"
-            }
-        } else {
-            tTable = municipalityMap[municipality]!!.municipalityTaxTable().toString()
-        }
-        return tTable
-    }
-
-
-    private fun payAfterTaxes(income: Int, municipality: String):String {
-        val taxTableNr = taxTable(municipality)
-        val burialFee = municipalityMap[municipality]!!.burialFee
-        return taxTableMap[taxTableNr]!!.leftAfterTaxes(income, burialFee).toString()
-    }
 }
