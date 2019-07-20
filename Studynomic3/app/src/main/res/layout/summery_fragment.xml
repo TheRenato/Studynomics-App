@@ -27,6 +27,117 @@
                 android:textSize="24sp"
                 android:id="@+id/textviewSummeryMunicipality" android:gravity="center_horizontal"/>
     </TableRow>
+
+    <!--Work Info-->
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginTop="8dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Work Information:"
+                android:layout_marginEnd="8dp" android:textSize="18sp" android:gravity="center_horizontal"
+                android:textStyle="bold"/>
+
+    </TableRow>
+
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Tax table is:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryTaxTableDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TAX TABLE"
+                android:id="@+id/textviewSummeryTaxTable"
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your full time Salary after tax is:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryYourPayDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income after Tax"
+                android:id="@+id/textviewSummeryYourPay"
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your leave of absent from work for studies:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryYourLeaveDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I wont work %"
+                android:id="@+id/textviewSummeryYourLeave"
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Salary per month after tax if you take time off is:"
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryYourPayStudentDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income after Tax"
+                android:id="@+id/textviewSummeryYourPayStudent"
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
+    </TableRow>
+
+
+    <!-- Your Study Info -->
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginTop="8dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Studies Information:"
+                android:layout_marginEnd="8dp" android:textSize="18sp" android:gravity="center_horizontal"
+                android:textStyle="bold"/>
+
+    </TableRow>
+
+
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
@@ -44,45 +155,73 @@
                     android:id="@+id/textviewSummeryStudyDate"
                     android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
     </TableRow>
+
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Tax table is:"
+                android:text="Under this Half-Year you cant earn more then: "
                 android:textSize="18sp"
-                android:id="@+id/textviewSummeryTaxTableDesc"
+                android:id="@+id/textviewSummeryStudyMaxIncomeDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TAX TABLE"
-                    android:id="@+id/textviewSummeryTaxTable"
-                    android:layout_marginTop="8dp" android:textSize="18sp"/>
+        <TextView
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:id="@+id/textviewSummeryStudyMaxIncome"
+                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
     </TableRow>
+
+    <!-- Conclusion Info -->
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginTop="8dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conclusion:"
+                android:layout_marginEnd="8dp" android:textSize="18sp" android:gravity="center_horizontal"
+                android:textStyle="bold"/>
+
+    </TableRow>
+
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Salery after tax is:"
-                    android:textSize="18sp"
-                    android:id="@+id/textviewSummeryYourPayDesc"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This half-year you will make (Before Tax): "
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryIncomeDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Income after Tax"
-                    android:id="@+id/textviewSummeryYourPay"
-                    android:layout_marginTop="8dp" android:textSize="18sp"/>
+        <TextView
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:id="@+id/textviewSummeryIncome"
+                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
     </TableRow>
-    <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You can earn this much more per studie month (Before Tax): "
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryLeftDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <TextView
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:id="@+id/textviewSummeryLeft"
+                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+    </TableRow>
 
 </TableLayout>

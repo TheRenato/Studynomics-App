@@ -67,17 +67,33 @@ class SummeryFragment : Fragment() {
         val dateFrom = sharedpref.getString("START_DATE", "20190902")!!
         val dateTo = sharedpref.getString("END_DATE", "20191231")!!
 
-        val dateFromTo:String = "$dateFrom - $dateTo"
+//        val dateFromTo:String = "$dateFrom - $dateTo"
         val municipality:String = sharedpref.getString("YOUR_RESIDENT", "STOCKHOLM")!!.toString()
         val income = sharedpref.getString("FULLTIME_PAY", "2000")!!.toInt()
+        val incomeAfterTaxText = workCalculator.payAfterTaxes(income, municipality, isChurch) + " Kr"
+        val leave = sharedpref.getString("WORK_LEAVE", "100")!!.toInt()
+        val leaveText = "$leave%"
+        val incomeAfterTaxLeaveText = workCalculator.payAfterTaxes(income, municipality, isChurch, leave.toInt()) + " Kr"
         val weeks = csnCalculator.studieInWeeks(dateFrom, dateTo)
-        val studyDateText = weeks.toString() +
-                "Weeks. Under this period you cant earn more then: " + csnCalculator.maxIncome(weeks)
+        val studyDateText = "$weeks Weeks"
+        val maxIncome = csnCalculator.maxIncome(weeks).toString() + " Kr"
 
         textviewSummeryMunicipality.text = municipality
-        textviewSummeryStudyDate.text = studyDateText
+//        Work Text
         textviewSummeryTaxTable.text = workCalculator.taxTable(municipality, isChurch)
-        textviewSummeryYourPay.text = workCalculator.payAfterTaxes(income, municipality, isChurch)
+        textviewSummeryYourPay.text = incomeAfterTaxText
+        textviewSummeryYourLeave.text = leaveText
+        textviewSummeryYourPayStudent.text = incomeAfterTaxLeaveText
+
+//        Study Text
+        textviewSummeryStudyDate.text = studyDateText
+        textviewSummeryStudyMaxIncome.text = maxIncome
+
+        val totalPay = workCalculator.totalPay(weeks, income, leave.toInt()).toString()
+        textviewSummeryIncome.text = totalPay
+
+        val left = ((csnCalculator.maxIncome(weeks) - totalPay.toInt()) / (weeks / 4.5)).toInt()
+        textviewSummeryLeft.text = left.toString()
     }
 
 }

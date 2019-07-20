@@ -52,7 +52,7 @@
                 android:title="Work leave for Studies:"
                 android:summary="How much leave from work will you take for studies"
                 android:inputType="number"
-                android:defaultValue="90"
+                android:defaultValue="100"
                 android:dependency="WORKING_BEFORE_OR_DURING"/>
 
 
