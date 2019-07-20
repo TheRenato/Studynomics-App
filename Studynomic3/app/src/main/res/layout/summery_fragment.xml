@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
         tools:context="com.opazoweb.studynomic3.ui.summery.SummeryFragment">
 
-    <TableLayout
-            android:layout_width="395dp"
-            android:layout_height="632dp" tools:layout_editor_absoluteY="91dp" tools:layout_editor_absoluteX="8dp">
 
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_gravity="center_horizontal">
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="You Live in:"
-                    android:id="@+id/textviewSummeryMunicipalityDesc"
-                    android:layout_marginEnd="8dp" android:textSize="18sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You Live in:"
+                android:id="@+id/textviewSummeryMunicipalityDesc"
+                android:layout_marginEnd="8dp" android:textSize="24sp" android:gravity="center_horizontal"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Municipality"
-                android:textSize="18sp"
-                android:id="@+id/textviewSummeryMunicipality"/>
-        </TableRow>
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+                android:textSize="24sp"
+                android:id="@+id/textviewSummeryMunicipality" android:gravity="center_horizontal"/>
+    </TableRow>
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You will studie between:"
+                android:text="You will studie for:"
                 android:textSize="18sp"
                 android:id="@+id/textviewSummeryStudyDateDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
+        <TextView
                     android:layout_height="wrap_content"
                     android:text="Date"
                     android:id="@+id/textviewSummeryStudyDate"
-                    android:layout_marginTop="8dp" android:textSize="18sp"/>
-        </TableRow>
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+                    android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+    </TableRow>
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +62,7 @@
                     android:id="@+id/textviewSummeryTaxTable"
                     android:layout_marginTop="8dp" android:textSize="18sp"/>
     </TableRow>
-        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
             <TextView
                     android:layout_width="wrap_content"
@@ -80,6 +79,10 @@
                     android:text="Income after Tax"
                     android:id="@+id/textviewSummeryYourPay"
                     android:layout_marginTop="8dp" android:textSize="18sp"/>
-        </TableRow>
-    </TableLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+</TableLayout>

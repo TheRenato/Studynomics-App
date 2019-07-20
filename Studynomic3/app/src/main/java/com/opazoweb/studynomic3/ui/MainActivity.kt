@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.opazoweb.studynomic3.R
+import com.opazoweb.studynomic3.data.csn.CsnMaxIncomeCollector
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.location.MunicipalityCollector
 import com.opazoweb.studynomic3.data.taxes.TaxTable
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var context: Context
     private lateinit var municipalityMap:MutableMap<String, Municipality>
     private lateinit var taxTableMap:MutableMap<String, TaxTable>
+    private lateinit var csnMaxIncomeMap:MutableMap<Int, Int>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController)
 
-        val municipalityCollector = MunicipalityCollector(context)
-        municipalityMap = municipalityCollector.getMunicipalityMap()
-
-        val taxTableCollector = TaxTableCollector(context)
-        taxTableMap = taxTableCollector.gettaxTableMap()
+        theCollectors()
 
 
     }
@@ -48,11 +46,26 @@ class MainActivity : AppCompatActivity() {
         return NavigationUI.navigateUp( navController, null)
     }
 
+    private fun theCollectors() {
+        val municipalityCollector = MunicipalityCollector(context)
+        municipalityMap = municipalityCollector.getMunicipalityMap()
+
+        val taxTableCollector = TaxTableCollector(context)
+        taxTableMap = taxTableCollector.gettaxTableMap()
+
+        val csnMaxIncomeCollector = CsnMaxIncomeCollector(context)
+        csnMaxIncomeMap = csnMaxIncomeCollector.getCsnMaxIncomeMap()
+    }
+
     fun getMunicipalityMap() :MutableMap<String, Municipality> {
         return municipalityMap
     }
 
     fun getTaxTableMap() :MutableMap<String, TaxTable> {
         return taxTableMap
+    }
+
+    fun getCsnMaxIncomeMap():MutableMap<Int, Int> {
+        return csnMaxIncomeMap
     }
 }

@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 
 
-class CSNCalculator {
+class CSNCalculator(val csnMaxIncomeMap: MutableMap<Int, Int>) {
+
     @SuppressLint("SimpleDateFormat")
-    fun studieInWeeks(startDate: String, endDate:String): Int {
+    fun studieInWeeks(startDate: String, endDate: String): Int {
 
         val startDateInTime = SimpleDateFormat("yyyyMMdd").parse(startDate)
         val endDateInTime = SimpleDateFormat("yyyyMMdd").parse(endDate)
@@ -20,5 +21,9 @@ class CSNCalculator {
         val totWeek = totDay/7
 
         return totWeek.toInt()
+    }
+
+    fun maxIncome(weeks: Int): Int {
+        return csnMaxIncomeMap[weeks]!!
     }
 }
