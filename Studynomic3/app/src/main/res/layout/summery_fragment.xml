@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="12dp"
+        android:scrollbars="none"
+        android:layout_weight="1" xmlns:android="http://schemas.android.com/apk/res/android">
+
 <TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_margin="12dp"
         tools:context="com.opazoweb.studynomic3.ui.summery.SummeryFragment">
 
 
@@ -19,6 +25,9 @@
                 android:text="You Live in:"
                 android:id="@+id/textviewSummeryMunicipalityDesc"
                 android:layout_marginEnd="8dp" android:textSize="24sp" android:gravity="center_horizontal"/>
+    </TableRow>
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_gravity="center_horizontal">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +43,7 @@
               android:layout_marginTop="8dp">
 
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Your Work Information:"
                 android:layout_marginEnd="8dp" android:textSize="18sp" android:gravity="center_horizontal"
@@ -53,13 +62,16 @@
                 android:id="@+id/textviewSummeryTaxTableDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
                 android:text="TAX TABLE"
                 android:id="@+id/textviewSummeryTaxTable"
-                android:layout_marginTop="8dp" android:textSize="18sp"/>
+                android:layout_marginTop="8dp" android:textSize="18sp" android:textAlignment="viewEnd"/>
     </TableRow>
 
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
@@ -72,10 +84,13 @@
                 android:id="@+id/textviewSummeryYourPayDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="Income after Tax"
                 android:id="@+id/textviewSummeryYourPay"
                 android:layout_marginTop="8dp" android:textSize="18sp"/>
@@ -93,10 +108,14 @@
                 android:id="@+id/textviewSummeryYourLeaveDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="I wont work %"
                 android:id="@+id/textviewSummeryYourLeave"
                 android:layout_marginTop="8dp" android:textSize="18sp"/>
@@ -113,10 +132,14 @@
                 android:id="@+id/textviewSummeryYourPayStudentDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="Income after Tax"
                 android:id="@+id/textviewSummeryYourPayStudent"
                 android:layout_marginTop="8dp" android:textSize="18sp"/>
@@ -148,12 +171,16 @@
                 android:id="@+id/textviewSummeryStudyDateDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
         <TextView
-                    android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:id="@+id/textviewSummeryStudyDate"
-                    android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:id="@+id/textviewSummeryStudyDate"
+                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"/>
     </TableRow>
 
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
@@ -166,12 +193,17 @@
                 android:id="@+id/textviewSummeryStudyMaxIncomeDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
         <TextView
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="Income"
                 android:id="@+id/textviewSummeryStudyMaxIncome"
-                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
     </TableRow>
 
     <!-- Conclusion Info -->
@@ -198,12 +230,17 @@
                 android:id="@+id/textviewSummeryIncomeDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
         <TextView
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="Income"
                 android:id="@+id/textviewSummeryIncome"
-                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+                android:layout_marginTop="8dp" android:textSize="18sp" />
     </TableRow>
 
     <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
@@ -216,12 +253,19 @@
                 android:id="@+id/textviewSummeryLeftDesc"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"/>
+    </TableRow>
 
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+              android:layout_marginBottom="15dp">
         <TextView
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
                 android:text="Income"
                 android:id="@+id/textviewSummeryLeft"
-                android:layout_marginTop="8dp" android:textSize="18sp" android:layout_width="204dp"/>
+                android:layout_marginTop="8dp" android:textSize="18sp" />
     </TableRow>
 
 </TableLayout>
+</ScrollView>
