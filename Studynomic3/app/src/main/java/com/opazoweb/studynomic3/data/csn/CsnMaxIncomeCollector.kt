@@ -1,7 +1,6 @@
 package com.opazoweb.studynomic3.data.csn
 
 import android.content.Context
-import com.opazoweb.studynomic3.data.taxes.TaxTable
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
@@ -9,7 +8,7 @@ import java.io.InputStreamReader
 import java.nio.charset.Charset
 
 class CsnMaxIncomeCollector (current: Context?) {
-    private var csnMaxIncomeMap = mutableMapOf<Int, Int>()
+    private var csnMaxIncomeMap = mutableMapOf<Int, CsnMaxIncome>()
     private var context = current?.applicationContext
     private val resources = context?.resources
 
@@ -18,7 +17,7 @@ class CsnMaxIncomeCollector (current: Context?) {
         csvRead(fileName1)
     }
 
-    fun getCsnMaxIncomeMap():MutableMap<Int, Int> {
+    fun getCsnMaxIncomeMap():MutableMap<Int, CsnMaxIncome> {
         return csnMaxIncomeMap
     }
 
@@ -49,14 +48,23 @@ class CsnMaxIncomeCollector (current: Context?) {
 
 
                 val weeks = strArray[0].toInt()
-                val maxIncome = strArray[1].toInt()
+                val maxIncome100 = strArray[1].toInt()
+                val maxIncome75 = strArray[2].toInt()
+                val maxIncome50 = strArray[3].toInt()
 
+                val csnMaxIncome = CsnMaxIncome(
+                    "$weeks Weeks",
+                    maxIncome100,
+                    maxIncome75,
+                    maxIncome50)
 
                 if (csnMaxIncomeMap.containsKey(weeks)) {
-                    if (maxIncome == csnMaxIncomeMap[weeks]) {}
-                    else { csnMaxIncomeMap[weeks] = maxIncome }
+                    if (csnMaxIncome == csnMaxIncomeMap[weeks] ) {}
+                    else {
+                        csnMaxIncomeMap[weeks] = csnMaxIncome }
                 }
-                else { csnMaxIncomeMap[weeks] = maxIncome }
+                else {
+                    csnMaxIncomeMap[weeks] = csnMaxIncome }
 
             }
         }
@@ -65,4 +73,5 @@ class CsnMaxIncomeCollector (current: Context?) {
         ins?.close()
         reader.close()
     }
+
 }

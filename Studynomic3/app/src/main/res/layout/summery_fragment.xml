@@ -188,6 +188,29 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="In a pace of: "
+                android:textSize="18sp"
+                android:id="@+id/textviewSummeryStudyPaceDesc"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"/>
+    </TableRow>
+
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAlignment="viewEnd" android:layout_marginRight="8dp"
+                android:text="Pace %"
+                android:id="@+id/textviewSummeryStudyPace"
+                android:layout_marginTop="8dp" android:textSize="18sp"/>
+    </TableRow>
+
+    <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Under this Half-Year you cant earn more then: "
                 android:textSize="18sp"
                 android:id="@+id/textviewSummeryStudyMaxIncomeDesc"

@@ -73,6 +73,15 @@
                 android:title="End Date"
                 android:defaultValue="20191231"
                 android:inputType="date"/>
+
+        <ListPreference
+            android:key="YOUR_STUDY_PACE"
+            android:title="Study pace?"
+            android:summary="The procentage of your study pace."
+            android:defaultValue="100"
+            android:entries="@array/PaceToStudyEntries"
+            android:entryValues="@array/PaceToStudyValues"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -1,11 +1,12 @@
 package com.opazoweb.studynomic3.data.calculators
 
 import android.annotation.SuppressLint
+import com.opazoweb.studynomic3.data.csn.CsnMaxIncome
 import java.text.SimpleDateFormat
 import kotlin.math.roundToInt
 
 
-class CSNCalculator(val csnMaxIncomeMap: MutableMap<Int, Int>) {
+class CSNCalculator(val csnMaxIncomeMap: MutableMap<Int, CsnMaxIncome>) {
 
     @SuppressLint("SimpleDateFormat")
     fun studieInWeeks(startDate: String, endDate: String): Int {
@@ -24,8 +25,8 @@ class CSNCalculator(val csnMaxIncomeMap: MutableMap<Int, Int>) {
         return totWeek.roundToInt()
     }
 
-    fun maxIncome(weeks: Int): Int {
-        return csnMaxIncomeMap[weeks]!!
+    fun maxIncome(weeks: Int, pace: Int = 100): Int {
+        return csnMaxIncomeMap[weeks]!!.getMaxIncome(pace)
     }
 
 }

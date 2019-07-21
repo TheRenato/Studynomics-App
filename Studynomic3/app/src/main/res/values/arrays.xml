@@ -330,62 +330,15 @@
         <item>NoChurchTax</item>
     </string-array>
 
-    <string-array name="WeeksToStudyEntries">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
-        <item>22</item>
-        <item>23</item>
-        <item>24</item>
-        <item>25</item>
-        <item>26</item>
+    <string-array name="PaceToStudyEntries">
+        <item>100%</item>
+        <item>75%</item>
+        <item>50%</item>
     </string-array>
 
-    <string-array name="WeeksToStudyFullTimeValues">
-        <item>175686</item>
-        <item>171180</item>
-        <item>166674</item>
-        <item>162168</item>
-        <item>157662</item>
-        <item>153157</item>
-        <item>148651</item>
-        <item>144145</item>
-        <item>139639</item>
-        <item>135133</item>
-        <item>130627</item>
-        <item>126121</item>
-        <item>121616</item>
-        <item>117110</item>
-        <item>112604</item>
-        <item>108098</item>
-        <item>103592</item>
-        <item>99086</item>
-        <item>94581</item>
-        <item>90075</item>
-        <item>85569</item>
-        <item>81063</item>
-        <item>76557</item>
-        <item>72051</item>
-        <item>67545</item>
-        <item>63040</item>
+    <string-array name="PaceToStudyValues">
+        <item>100</item>
+        <item>75</item>
+        <item>50</item>
     </string-array>
-
 </resources>

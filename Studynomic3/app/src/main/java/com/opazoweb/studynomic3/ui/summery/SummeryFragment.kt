@@ -11,6 +11,7 @@ import androidx.preference.PreferenceManager
 import com.opazoweb.studynomic3.R
 import com.opazoweb.studynomic3.data.calculators.CSNCalculator
 import com.opazoweb.studynomic3.data.calculators.WorkCalculator
+import com.opazoweb.studynomic3.data.csn.CsnMaxIncome
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.taxes.TaxTable
 import com.opazoweb.studynomic3.ui.MainActivity
@@ -25,7 +26,7 @@ class SummeryFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var municipalityMap:MutableMap<String, Municipality>
     private lateinit var taxTableMap:MutableMap<String, TaxTable>
-    private lateinit var csnMaxIncomeMap:MutableMap<Int, Int>
+    private lateinit var csnMaxIncomeMap:MutableMap<Int, CsnMaxIncome>
     private lateinit var sharedpref: SharedPreferences
     private var isChurch:Boolean = false
     private lateinit var workCalculator:WorkCalculator
@@ -76,7 +77,8 @@ class SummeryFragment : Fragment() {
         val incomeAfterTaxLeaveText = workCalculator.payAfterTaxes(income, municipality, isChurch, leave.toInt()) + " Kr"
         val weeks = csnCalculator.studieInWeeks(dateFrom, dateTo)
         val studyDateText = "$weeks Weeks"
-        val maxIncome = csnCalculator.maxIncome(weeks).toString() + " Kr"
+        val pace = sharedpref.getString("YOUR_STUDY_PACE", "100")!!.toInt()
+        val maxIncome = csnCalculator.maxIncome(weeks, pace).toString() + " Kr"
 
         textviewSummeryMunicipality.text = municipality
 //        Work Text
@@ -89,10 +91,14 @@ class SummeryFragment : Fragment() {
         textviewSummeryStudyDate.text = studyDateText
         textviewSummeryStudyMaxIncome.text = maxIncome
 
+        val paceText = pace.toString() + " %"
+        textviewSummeryStudyPace.text = paceText
+
+//        Conclusion
         val totalPay = workCalculator.totalPay(weeks, income, leave.toInt()).toString()
         textviewSummeryIncome.text = totalPay
 
-        val left = ((csnCalculator.maxIncome(weeks) - totalPay.toInt()) / (weeks / 4.5)).toInt()
+        val left = ((csnCalculator.maxIncome(weeks, pace) - totalPay.toInt()) / (weeks / 4.5)).toInt()
         textviewSummeryLeft.text = left.toString()
     }
 

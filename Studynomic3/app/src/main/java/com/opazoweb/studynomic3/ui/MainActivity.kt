@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.opazoweb.studynomic3.R
+import com.opazoweb.studynomic3.data.csn.CsnMaxIncome
 import com.opazoweb.studynomic3.data.csn.CsnMaxIncomeCollector
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.location.MunicipalityCollector
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var context: Context
     private lateinit var municipalityMap:MutableMap<String, Municipality>
     private lateinit var taxTableMap:MutableMap<String, TaxTable>
-    private lateinit var csnMaxIncomeMap:MutableMap<Int, Int>
+    private lateinit var csnMaxIncomeMap:MutableMap<Int, CsnMaxIncome>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         return taxTableMap
     }
 
-    fun getCsnMaxIncomeMap():MutableMap<Int, Int> {
+    fun getCsnMaxIncomeMap():MutableMap<Int, CsnMaxIncome> {
         return csnMaxIncomeMap
     }
 }
