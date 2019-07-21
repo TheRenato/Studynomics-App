@@ -7,13 +7,13 @@
     <fragment android:id="@+id/summeryFragment" android:name="com.opazoweb.studynomic3.ui.summery.SummeryFragment"
               android:label="Summery" tools:layout="@layout/summery_fragment"/>
 
-    <fragment android:id="@+id/summeryCSNFragment"
-              android:name="com.opazoweb.studynomic3.ui.csn.CsnSummeryFragment"
-              android:label="CSN Summery" tools:layout="@layout/csn_summery_fragment"/>
+    <!--<fragment android:id="@+id/summeryCSNFragment"-->
+              <!--android:name="com.opazoweb.studynomic3.ui.csn.CsnSummeryFragment"-->
+              <!--android:label="CSN Summery" tools:layout="@layout/csn_summery_fragment"/>-->
 
-    <fragment android:id="@+id/summeryWorkFragment"
-              android:name="com.opazoweb.studynomic3.ui.work.WorkSummeryFragment"
-              android:label="Work Summery" tools:layout="@layout/work_summery_fragment"/>
+    <!--<fragment android:id="@+id/summeryWorkFragment"-->
+              <!--android:name="com.opazoweb.studynomic3.ui.work.WorkSummeryFragment"-->
+              <!--android:label="Work Summery" tools:layout="@layout/work_summery_fragment"/>-->
 
     <fragment android:id="@+id/settingsFragment"
               android:name="com.opazoweb.studynomic3.ui.settings.SettingsFragment"

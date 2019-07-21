@@ -6,16 +6,16 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/summery"
     />
-    <item
-            android:id="@+id/summeryCSNFragment"
-            android:icon="@drawable/ic_school_black_24dp"
-            android:title="@string/csn_summery"
-    />
-    <item
-            android:id="@+id/summeryWorkFragment"
-            android:icon="@drawable/ic_work_black_24dp"
-            android:title="@string/work_summery"
-    />
+    <!--<item-->
+            <!--android:id="@+id/summeryCSNFragment"-->
+            <!--android:icon="@drawable/ic_school_black_24dp"-->
+            <!--android:title="@string/csn_summery"-->
+    <!--/>-->
+    <!--<item-->
+            <!--android:id="@+id/summeryWorkFragment"-->
+            <!--android:icon="@drawable/ic_work_black_24dp"-->
+            <!--android:title="@string/work_summery"-->
+    <!--/>-->
     <item
             android:id="@+id/settingsFragment"
             android:icon="@drawable/ic_settings_black_24dp"
