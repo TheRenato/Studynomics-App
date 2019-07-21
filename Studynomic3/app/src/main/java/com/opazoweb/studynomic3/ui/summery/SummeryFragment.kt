@@ -70,11 +70,12 @@ class SummeryFragment : Fragment() {
 
 //        val dateFromTo:String = "$dateFrom - $dateTo"
         val municipality:String = sharedpref.getString("YOUR_RESIDENT", "STOCKHOLM")!!.toString()
-        val income = sharedpref.getString("FULLTIME_PAY", "2000")!!.toInt()
+        val income = sharedpref.getString("FULLTIME_PAY", "0")!!.toInt()
         val incomeAfterTaxText = workCalculator.payAfterTaxes(income, municipality, isChurch) + " Kr"
-        val leave = sharedpref.getString("WORK_LEAVE", "100")!!.toInt()
+        val leavePref = sharedpref.getString("WORK_LEAVE", "100")!!
+        val leave = leavePref.replace(",", ".").toDouble()
         val leaveText = "$leave%"
-        val incomeAfterTaxLeaveText = workCalculator.payAfterTaxes(income, municipality, isChurch, leave.toInt()) + " Kr"
+        val incomeAfterTaxLeaveText = workCalculator.payAfterTaxes(income, municipality, isChurch, leave) + " Kr"
         val weeks = csnCalculator.studieInWeeks(dateFrom, dateTo)
         val studyDateText = "$weeks Weeks"
         val pace = sharedpref.getString("YOUR_STUDY_PACE", "100")!!.toInt()
@@ -91,11 +92,11 @@ class SummeryFragment : Fragment() {
         textviewSummeryStudyDate.text = studyDateText
         textviewSummeryStudyMaxIncome.text = maxIncome
 
-        val paceText = pace.toString() + " %"
+        val paceText = "$pace %"
         textviewSummeryStudyPace.text = paceText
 
 //        Conclusion
-        val totalPay = workCalculator.totalPay(weeks, income, leave.toInt()).toString()
+        val totalPay = workCalculator.totalPay(weeks, income, leave).toString()
         textviewSummeryIncome.text = totalPay
 
         val left = ((csnCalculator.maxIncome(weeks, pace) - totalPay.toInt()) / (weeks / 4.5)).toInt()

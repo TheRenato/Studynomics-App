@@ -17,7 +17,9 @@ class WorkCalculator(
             if (municipalityMap[municipality]!!.isTownship(townshipName!!)) {
                 tTable = municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
             } else {
-                tTable = "Please Select a Parish"
+                val keys = municipalityMap.keys
+                val first = keys.first()
+                tTable = municipalityMap[municipality]?.townshipTaxTable(first).toString()
             }
         } else {
             tTable = municipalityMap[municipality]!!.municipalityTaxTable().toString()
@@ -25,7 +27,7 @@ class WorkCalculator(
         return tTable
     }
 
-    fun payAfterTaxes(income: Int, municipality: String, isChurch: Boolean, leave: Int = 0):String {
+    fun payAfterTaxes(income: Int, municipality: String, isChurch: Boolean, leave: Double = 0.00):String {
         val taxTableNr = taxTable(municipality, isChurch)
         val burialFee = municipalityMap[municipality]!!.burialFee
 
@@ -35,7 +37,7 @@ class WorkCalculator(
 
     }
 
-    fun totalPay(studieWeeks: Int, income: Int, leave: Int = 0): Int {
+    fun totalPay(studieWeeks: Int, income: Int, leave: Double = 0.00): Int {
         val workWeeks = 26 - studieWeeks
 
         val workMonths = (workWeeks/4.25).roundToInt()
@@ -48,7 +50,8 @@ class WorkCalculator(
         return sum
     }
 
-    private fun leaveToDeci(leave: Int):Double {
+    private fun leaveToDeci(leave: Double):Double {
         return (100 - leave.toDouble()) / 100
     }
+
 }

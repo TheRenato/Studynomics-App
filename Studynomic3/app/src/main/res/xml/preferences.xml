@@ -44,13 +44,13 @@
                 android:title="Your fulltime pay:"
                 android:summary="How much you would get payed if you had worked fulltime"
                 android:inputType="number"
-                android:defaultValue="20000"
+                android:defaultValue="0"
                 android:dependency="WORKING_BEFORE_OR_DURING"/>
 
         <EditTextPreference
                 android:key="WORK_LEAVE"
                 android:title="Work leave for Studies:"
-                android:summary="How much leave from work will you take for studies"
+                android:summary="How much leave from work will you take for studies. "
                 android:inputType="number"
                 android:defaultValue="100"
                 android:dependency="WORKING_BEFORE_OR_DURING" android:numeric="integer|decimal"
