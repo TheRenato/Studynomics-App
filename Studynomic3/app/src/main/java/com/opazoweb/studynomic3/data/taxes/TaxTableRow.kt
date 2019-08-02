@@ -8,7 +8,7 @@ class TaxTableRow(
 )
 {
     fun doesItFit (income: Int):Boolean {
-        var isIt: Boolean = false
+        var isIt: Boolean
         if (payFrom <= income){
             isIt = payTo >= income
         } else {

@@ -103,7 +103,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your leave of absent from work for studies:"
+                android:text="Your leave of absence from work for studies:"
                 android:textSize="18sp"
                 android:id="@+id/textviewSummeryYourLeaveDesc"
                 android:layout_marginTop="8dp"
@@ -166,7 +166,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You will studie for:"
+                android:text="You will study for:"
                 android:textSize="18sp"
                 android:id="@+id/textviewSummeryStudyDateDesc"
                 android:layout_marginTop="8dp"
