@@ -3,7 +3,7 @@ package com.opazoweb.studynomic3.data.calculators
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
-import androidx.test.platform.app.InstrumentationRegistry.*
+import androidx.test.platform.app.*
 import com.opazoweb.studynomic3.data.location.Municipality
 import com.opazoweb.studynomic3.data.location.MunicipalityCollector
 import com.opazoweb.studynomic3.data.taxes.TaxTable
@@ -28,7 +28,7 @@ class WorkCalculatorTest {
 
     @Before
     fun setUp() {
-        context = getInstrumentation().context
+        context = InstrumentationRegistry.getInstrumentation().context
         sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
         municipalityCollector = MunicipalityCollector(context)
         municipalityMap = municipalityCollector.getMunicipalityMap()

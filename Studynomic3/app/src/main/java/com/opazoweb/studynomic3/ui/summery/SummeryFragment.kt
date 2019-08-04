@@ -83,7 +83,9 @@ class SummeryFragment : Fragment() {
 
         textviewSummeryMunicipality.text = municipality
 //        Work Text
-        textviewSummeryTaxTable.text = workCalculator.taxTable(municipality, isChurch)
+
+        val taxTable = workCalculator.taxTable(municipality, isChurch)
+        textviewSummeryTaxTable.text = taxTable
         textviewSummeryYourPay.text = incomeAfterTaxText
         textviewSummeryYourLeave.text = leaveText
         textviewSummeryYourPayStudent.text = incomeAfterTaxLeaveText

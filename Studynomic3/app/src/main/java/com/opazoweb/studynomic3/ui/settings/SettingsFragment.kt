@@ -4,6 +4,7 @@ import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.opazoweb.studynomic3.R
 import com.opazoweb.studynomic3.data.location.Municipality
@@ -25,11 +26,22 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
 
         val listTownship: ListPreference = findPreference("YOUR_TOWNSHIP") as ListPreference
+        val churchFee: Preference? = findPreference("CHURCH_FEE")
 
         listTownship.entries = municipalityMap[defaultMunicipality]?.townshipArray()
         listTownship.entryValues = municipalityMap[defaultMunicipality]?.townshipArray()
+        val township = municipalityMap[defaultMunicipality]?.firstTownshipInArray()
+
+        listTownship.setDefaultValue(township)
+
+
         listTownship.setOnPreferenceClickListener {
             listTownshipOf()
+            true
+        }
+
+        churchFee?.setOnPreferenceClickListener {
+            setDefaultTownship()
             true
         }
 
@@ -42,6 +54,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
 
         listTownshipOf()
+        setDefaultTownship()
 
     }
 
@@ -54,5 +67,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
         listTownship.entries = municipalityMap[choosenMunicipality]?.townshipArray()
         listTownship.entryValues = municipalityMap[choosenMunicipality]?.townshipArray()
 
+    }
+
+    private fun setDefaultTownship() {
+
+        val municipalitys = findPreference("YOUR_RESIDENT") as ListPreference
+        val choosenMunicipality = municipalitys.entry.toString()
+
+        val listTownship: ListPreference = findPreference("YOUR_TOWNSHIP") as ListPreference
+        val township = municipalityMap[choosenMunicipality]?.firstTownshipInArray()
+
+        listTownship.setDefaultValue(township)
     }
 }

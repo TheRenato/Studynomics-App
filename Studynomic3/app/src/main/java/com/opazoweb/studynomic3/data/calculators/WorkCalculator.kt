@@ -12,17 +12,17 @@ class WorkCalculator(
 ) {
     fun taxTable(municipality: String, isChurch: Boolean):String {
         val tTable: String
-        if (isChurch) {
+        tTable = if (isChurch) {
             val townshipName:String? = sharedpref.getString("YOUR_TOWNSHIP", "NULL")
             if (municipalityMap[municipality]!!.isTownship(townshipName!!)) {
-                tTable = municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
+                municipalityMap[municipality]?.townshipTaxTable(townshipName).toString()
             } else {
-                val keys = municipalityMap.keys
-                val first = keys.first()
-                tTable = municipalityMap[municipality]?.townshipTaxTable(first).toString()
+                val first = municipalityMap[municipality]!!.firstTownshipInArray()
+
+                municipalityMap[municipality]?.townshipTaxTable(first).toString()
             }
         } else {
-            tTable = municipalityMap[municipality]!!.municipalityTaxTable().toString()
+            municipalityMap[municipality]!!.municipalityTaxTable().toString()
         }
         return tTable
     }

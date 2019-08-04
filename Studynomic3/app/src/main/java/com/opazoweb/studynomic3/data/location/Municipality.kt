@@ -49,6 +49,11 @@ class Municipality (
             return cs
         }
 
+        fun firstTownshipInArray(): String {
+            val str = townshipArray()[0]
+            return str.toString()
+        }
+
         fun isTownship (townshipName: String): Boolean{
             return townshipMap.containsKey(townshipName)
         }
