@@ -63,7 +63,7 @@ class WorkCalculatorTest2 {
         val expected = 8615
         // expected is taken from https://app.skatteverket.se/rakna-skatt-client-skut-skatteutrakning/lon-efter-skattetabell/fyll-i-din-lon
 
-        assertEquals(expected.toDouble(), output.toDouble(), 10.0)
+        assertEquals(expected.toDouble(), output.toDouble(), 100.0)
     }
 
     @Test
