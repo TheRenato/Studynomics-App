@@ -15,6 +15,7 @@ import com.opazoweb.studynomic3.data.location.MunicipalityCollector
 import com.opazoweb.studynomic3.data.taxes.TaxTable
 import com.opazoweb.studynomic3.data.taxes.TaxTableCollector
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
 

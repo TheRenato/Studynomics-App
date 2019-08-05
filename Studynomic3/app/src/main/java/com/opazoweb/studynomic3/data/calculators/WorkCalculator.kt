@@ -51,7 +51,7 @@ class WorkCalculator(
     }
 
     private fun leaveToDeci(leave: Double):Double {
-        return (100 - leave.toDouble()) / 100
+        return (100 - leave) / 100
     }
 
 }

@@ -1,5 +1,6 @@
 package com.opazoweb.studynomic3.data.calculators
 
+
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
@@ -18,6 +19,7 @@ import org.junit.Test
 
 class WorkCalculatorTest2 {
 
+    lateinit var workCalculator: WorkCalculator
     lateinit var context: Context
     lateinit var sharedpref: SharedPreferences
     lateinit var municipalityMap: MutableMap<String, Municipality>
@@ -28,13 +30,17 @@ class WorkCalculatorTest2 {
     var municipality = "STOCKHOLM"
     var isChurch = false
 
+
     @Before
     fun setUp() {
-        context = InstrumentationRegistry.getInstrumentation().context
-        sharedpref = PreferenceManager.getDefaultSharedPreferences(context)
-        municipalityCollector = MunicipalityCollector(context)
+    val someContext = InstrumentationRegistry.getInstrumentation().targetContext
+
+        sharedpref = PreferenceManager.getDefaultSharedPreferences(someContext)
+        municipalityCollector = MunicipalityCollector(someContext)
         municipalityMap = municipalityCollector.getMunicipalityMap()
+        taxTableCollector = TaxTableCollector(someContext)
         taxTableMap = taxTableCollector.gettaxTableMap()
+        workCalculator = WorkCalculator(municipalityMap, taxTableMap, sharedpref)
     }
 
     @After
@@ -43,8 +49,7 @@ class WorkCalculatorTest2 {
 
     @Test
     fun taxTable() {
-        val output = WorkCalculator(municipalityMap, taxTableMap, sharedpref)
-            .taxTable(municipality, isChurch)
+        val output = workCalculator.taxTable(municipality, isChurch).toInt()
 
         val expected = 30
 
@@ -53,21 +58,48 @@ class WorkCalculatorTest2 {
 
     @Test
     fun payAfterTaxes() {
+        val income = 10000
+        val output = workCalculator.payAfterTaxes(income, municipality, isChurch)
+        val expected = 8615
+        // expected is taken from https://app.skatteverket.se/rakna-skatt-client-skut-skatteutrakning/lon-efter-skattetabell/fyll-i-din-lon
+
+        assertEquals(expected.toDouble(), output.toDouble(), 10.0)
     }
 
     @Test
     fun totalPay() {
+        val income = 10000
+        val weeks = 4
+        val leave = 50.toDouble()
+
+        val output = workCalculator.totalPay(weeks, income, leave)
+        val expected = 55000
+
+        assertEquals(expected, output)
+
     }
 
     @Test
     fun getMunicipalityMap() {
+        var output = false
+        val map = workCalculator.municipalityMap
+        output = map is MutableMap<String, Municipality>
+        assert(output)
     }
 
     @Test
     fun getTaxTableMap() {
+        var output = false
+        val map = workCalculator.taxTableMap
+        output = map is MutableMap<String, TaxTable>
+        assert(output)
     }
 
     @Test
     fun getSharedpref() {
+        var output = false
+        val map = workCalculator.sharedpref
+        output = map is SharedPreferences
+        assert(output)
     }
 }
