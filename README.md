@@ -37,7 +37,7 @@ When I created the app I had taken a study leave from my work for only 88.5%. An
 
  ### Functions
  
- Here you can see how the app worked at august 2019.
+ Here you can see how the app worked at august 2019, sorry the video is in Swedish.
  <iframe width="560" height="315" src="https://www.youtube.com/embed/jGeTnQgRczg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  https://www.youtube.com/embed/jGeTnQgRczg
  
