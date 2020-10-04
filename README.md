@@ -38,7 +38,8 @@ When I created the app I had taken a study leave from my work for only 88.5%. An
  ### Functions
  
  Here you can see how the app worked at august 2019, sorry the video is in Swedish.
- https://www.youtube.com/embed/jGeTnQgRczg
+ 
+ https://youtu.be/jGeTnQgRczg
  
  The functions:
  1) Calculate how much you have left if you take X% of study leave from work.
