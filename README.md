@@ -1,9 +1,10 @@
-# Studynomic
+# Studynomics-App
 ## Dev: Renato Opazo Salgado
-For the course 1DV430 in Linnaeus University.
+For the course 1DV430 at Linnaeus University.
 
 I build an android application written in Kotlin. This app was a try off making it mvvm before I participated in the mvc course 1DV607 - Object Oriented Analysis and Design at Linnaeus University. 
 
+Will continue this application base functions as a webapp in another repo. 
 
 ### Background
 
@@ -34,4 +35,13 @@ In Sweden, if you have been employed in the same company more than 6 months you 
 
 When I created the app I had taken a study leave from my work for only 88.5%. And got 100% study grant and loan from the government. As I worked for 11.5% I was afraid of passing the income cap. And if that would happen it would be an economic problem for me.
 
+ ### Functions
  
+ Here you can see how the app worked at august 2019.
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/jGeTnQgRczg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ https://www.youtube.com/embed/jGeTnQgRczg
+ 
+ The functions:
+ 1) Calculate how much you have left if you take X% of study leave from work.
+ 2) Calculate how much you have left after taxes depending on your municipality.
+ 3) Calculate how much more you can earn per month wily studying.
